@@ -11,38 +11,42 @@ function img(base: string, alt: string): SiteImage {
 }
 
 export const siteImages = {
-  hero: img("hero-home", "Caminito del Rey walkway above the gorge — gateway to Andalusia from Malaga cruise port"),
-  ogDefault: img("og-default", "Andalusia cruise planning — Alhambra, Ronda and Malaga from Malaga cruise port"),
+  hero: img(
+    "hero-home",
+    "Palma Cathedral and Mediterranean waterfront — cruise day in Palma de Mallorca",
+  ),
+  ogDefault: img(
+    "og-default",
+    "Palma and Mallorca cruise planning — cathedral, Sóller, Valldemossa and shore excursions",
+  ),
   logo: {
     base: "logo-mark",
     src: `${B}/logo-mark.svg`,
-    alt: "Malaga Shore Excursions",
+    alt: "Palma Shore Excursions",
   },
-  port: img("cruise-port", "Malaga cruise port waterfront — gateway to Andalusia"),
+  port: img("port", "Palma de Mallorca cruise port and harbour approach"),
 } as const;
 
 export const subjectImages: Record<string, SiteImage> = {
-  alhambra: img("alhambra", "Alhambra palace complex in Granada from Malaga cruise port"),
-  granada: img("granada", "Granada cityscape and Albaicín from Malaga"),
-  ronda: img("ronda", "Puente Nuevo bridge spanning El Tajo gorge in Ronda"),
-  caminito: img("caminito", "Caminito del Rey cliff walkways near Malaga"),
-  mijas: img("mijas", "Whitewashed streets of Mijas pueblo on the Costa del Sol"),
-  historic: img("historic", "Malaga Cathedral in the historic centre"),
-  alcazaba: img("alcazaba", "Alcazaba fortress overlooking Malaga harbour"),
-  coast: img("coast", "Malaga waterfront and Mediterranean promenade from the cruise port"),
-  "white-villages": img("white-villages", "Andalusian white village streets and terraces"),
-  wine: img("wine", "Andalusian wine and food culture"),
-  walking: img("walking", "Walking Malaga old town from the cruise terminal"),
-  photography: img("photography", "Photography viewpoints in Ronda and Caminito del Rey"),
-  private: img("private", "Private Andalusia shore excursion from Malaga"),
-  food: img("food", "Andalusian tapas and food culture in Malaga"),
-  family: img("family", "Family exploring Malaga and Andalusia from a cruise ship"),
-  compare: img("compare", "Comparing Andalusia cruise excursion options from Malaga"),
-  port: img("cruise-port", "Malaga cruise port terminal"),
-  highlights: img("alhambra", "Andalusia highlights from Malaga cruise port"),
-  city: img("historic", "Malaga historic centre from cruise port"),
-  history: img("alcazaba", "Historic Malaga monuments and Moorish heritage"),
-  "hero-home": img("hero-home", "Caminito del Rey — Andalusia gateway hero image"),
+  cathedral: img("cathedral", "Palma Cathedral (La Seu) above the bay"),
+  historic: img("historic", "Historic Palma old town and sandstone architecture"),
+  soller: img("soller", "Sóller valley town beneath the Tramuntana Mountains"),
+  valldemossa: img("valldemossa", "Stone lanes and mountain setting in Valldemossa"),
+  tramuntana: img("tramuntana", "Serra de Tramuntana terraces and mountain scenery"),
+  caves: img("caves", "Caves of Drach underground chambers in eastern Mallorca"),
+  coast: img("coast", "Mallorca coastline and Mediterranean light"),
+  food: img("food", "Mallorcan market produce and local flavours in Palma"),
+  train: img("train", "Historic Sóller railway through the Mallorca mountains"),
+  cycling: img("cycling", "Cycling and e-bike touring in Palma"),
+  private: img("private", "Private Mallorca shore excursion from Palma"),
+  active: img("active", "Active shore excursion day in Palma and Mallorca"),
+  compare: img("compare", "Comparing Palma shore excursion options"),
+  walking: img("walking", "Walking Palma old town from the cruise harbour"),
+  photography: img("photography", "Photography viewpoints across Palma and Mallorca"),
+  family: img("family", "Family exploring Palma on a cruise day ashore"),
+  market: img("market", "Mercat de l’Olivar and Palma market culture"),
+  port: img("port", "Palma cruise port terminal and waterfront"),
+  "hero-home": img("hero-home", "Palma Mediterranean harbour hero image"),
 };
 
 function pick(key: string): SiteImage {
@@ -50,46 +54,33 @@ function pick(key: string): SiteImage {
 }
 
 const excursionImageKeys: Record<string, string> = {
-  "granada-alhambra-full-day": "alhambra",
-  "ronda-white-villages": "ronda",
-  "caminito-del-rey": "caminito",
-  "malaga-city-highlights": "historic",
-  "historic-malaga-walking": "walking",
-  "mijas-costa-del-sol": "mijas",
-  "private-andalusia-discovery": "private",
-  "malaga-food-wine": "food",
-  "alcazaba-cathedral-tour": "alcazaba",
-  "granada-alhambra-half-day": "granada",
-  "exclusive-ronda-day": "ronda",
-  "exclusive-caminito": "caminito",
-  "andalusia-white-villages": "white-villages",
-  "costa-del-sol-scenic": "coast",
+  "soller-valldemossa": "soller",
+  "caves-of-drach": "caves",
+  "palma-old-town-cathedral": "cathedral",
+  "mallorca-train-tram-boat": "train",
+  "palma-food-tour": "food",
+  "private-soller-valldemossa": "private",
+  "palma-ebike-tour": "cycling",
+  "mallorca-coastal-adventure": "active",
+  "private-caves-drach-porto-cristo": "caves",
+  "palma-hop-on-hop-off": "historic",
 };
 
 export function getExcursionImage(slug: string): SiteImage {
-  return pick(excursionImageKeys[slug] ?? "highlights");
+  return pick(excursionImageKeys[slug] ?? "historic");
 }
 
-export const excursionsHubImage = pick("alhambra");
+export const excursionsHubImage = pick("cathedral");
 
-const highlightImageKeys: Record<string, string> = {
-  "granada-from-malaga-cruise-port": "alhambra",
-  "ronda-shore-excursion-guide": "ronda",
-  "caminito-del-rey-from-malaga": "caminito",
-  "historic-malaga-guide": "historic",
-  "mijas-from-malaga": "mijas",
-};
+const highlightImageKeys: Record<string, string> = {};
 
 const comparisonImageKeys: Record<string, string> = {
-  "granada-or-ronda": "compare",
-  "ronda-or-caminito-del-rey": "caminito",
-  "can-you-explore-malaga-independently": "walking",
-  "best-malaga-shore-excursion": "alhambra",
+  "which-palma-shore-excursion": "compare",
+  "palma-or-mallorca-island": "historic",
+  "soller-or-caves": "caves",
+  "can-you-explore-palma-independently": "walking",
   "private-tour-vs-coach-tour": "private",
-  "best-andalusia-tour-first-time": "alhambra",
-  "one-day-in-malaga": "historic",
-  "is-caminito-del-rey-worth-it": "caminito",
-  "who-should-visit-caminito-del-rey": "caminito",
+  "best-palma-tour-first-time": "soller",
 };
 
 export function getComparisonImage(slug: string): SiteImage {
@@ -97,7 +88,7 @@ export function getComparisonImage(slug: string): SiteImage {
 }
 
 export function getHighlightImage(slug: string): SiteImage {
-  return pick(highlightImageKeys[slug] ?? "highlights");
+  return pick(highlightImageKeys[slug] ?? "historic");
 }
 
 export function getGuideImage(key: string): SiteImage {
@@ -112,4 +103,4 @@ export function getTransferImage(_slug: string): SiteImage {
   return pick("coast");
 }
 
-export const guidesHubImage = pick("alhambra");
+export const guidesHubImage = pick("tramuntana");

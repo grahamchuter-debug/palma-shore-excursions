@@ -4,14 +4,12 @@ import { subjectImages } from "@/lib/images";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 const CARD_EMOJI: Record<string, string> = {
-  "historic-malaga": "🎨",
-  "granada-alhambra": "🏰",
-  ronda: "🌉",
-  "caminito-del-rey": "🥾",
-  "mijas-coast": "🌊",
-  "food-wine": "🍷",
-  "private-tours": "🚗",
-  "walking-tours": "🚶",
+  "historic-palma": "⛪",
+  "soller-valldemossa": "🏔️",
+  railways: "🚂",
+  caves: "🕯️",
+  food: "🍷",
+  active: "🚴",
 };
 
 export function ExperienceSelector() {
@@ -19,14 +17,14 @@ export function ExperienceSelector() {
     <section className="section-padding bg-coastal-50 border-b border-coastal-100">
       <div className="container-wide">
         <p className="section-eyebrow">Featured experience types</p>
-        <h2 className="section-title mt-2">Browse Andalusia by the day you want</h2>
+        <h2 className="section-title mt-2">Browse Mallorca by the day you want</h2>
         <p className="section-subtitle">
-          Historic Malaga, Granada, Ronda, Caminito del Rey, Mijas, food and wine, walking and private
-          touring — with the practical detail a cruise day requires.
+          Historic Palma, Sóller and Valldemossa, scenic railways, caves, food and active touring — with
+          the practical detail a cruise day requires.
         </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {experienceCards.map((card) => {
-            const image = subjectImages[card.imageKey] ?? subjectImages.alhambra;
+            const image = subjectImages[card.imageKey] ?? subjectImages.historic;
             return (
               <Link
                 key={card.slug}
@@ -39,7 +37,10 @@ export function ExperienceSelector() {
                     role="card"
                     imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-coastal-900/60 via-transparent to-transparent" aria-hidden="true" />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-coastal-900/60 via-transparent to-transparent"
+                    aria-hidden="true"
+                  />
                   <span className="absolute left-3 top-3 text-2xl" aria-hidden="true">
                     {CARD_EMOJI[card.slug] ?? "🌄"}
                   </span>

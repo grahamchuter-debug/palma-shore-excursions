@@ -43,11 +43,12 @@ export function buildMetadata({
     title: path === "/" ? { absolute: ogTitle } : title,
     description,
     keywords: [
-      "Malaga shore excursions",
-      "Alhambra from Malaga",
-      "Malaga cruise excursions",
-      "Andalusia shore excursions",
-      "Malaga cruise port",
+      "Palma shore excursions",
+      "Palma de Mallorca shore excursions",
+      "Mallorca shore excursions",
+      "Majorca shore excursions",
+      "Palma cruise excursions",
+      "Palma cruise port",
       ...keywords,
     ],
     metadataBase: new URL(SITE.url),
@@ -117,7 +118,13 @@ export function highlightPageMetadata(slug: string, title: string, description: 
   });
 }
 
-export function guidePageMetadata(hubPath: string, slug: string, title: string, description: string, imageKey: string) {
+export function guidePageMetadata(
+  hubPath: string,
+  slug: string,
+  title: string,
+  description: string,
+  imageKey: string,
+) {
   const image = getGuideImage(imageKey);
   return buildMetadata({
     title,

@@ -42,12 +42,16 @@ export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
         <div className="mb-8 rounded-xl border border-amber-200 bg-amber-50 p-6">
           <p className="font-medium text-amber-950">No ships are listed for this schedule period yet</p>
           <p className="mt-2 text-sm text-amber-900">
-            Verified ship calls for {port.name} are being imported. Browse {SCHEDULE_YEARS.join(" and ")}{" "}
-            schedule pages below, confirm times with your cruise line, and explore our{" "}
-            <Link href="/cruise-port-guide" className="font-medium underline">
-              cruise port guide
+            Verified ship calls for {port.name} are being imported. We do not invent arrivals or ship names.
+            Confirm times with your cruise line, and explore our{" "}
+            <Link href="/palma-cruise-port" className="font-medium underline">
+              Palma cruise port guide
             </Link>{" "}
-            for planning.
+            or the{" "}
+            <Link href="/palma-cruise-ship-schedule" className="font-medium underline">
+              Palma cruise ship schedule
+            </Link>{" "}
+            hub for planning.
           </p>
         </div>
       )}
@@ -88,14 +92,20 @@ export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="section-title text-2xl mb-4">Schedule by Year</h2>
-        <div className="flex flex-wrap gap-3 mb-8">
-          {SCHEDULE_YEARS.map((year) => (
-            <Link key={year} href={portYearPath(port.slug, year)} className="btn-primary text-sm">{year} Schedule</Link>
-          ))}
-        </div>
-      </section>
+      {hasData && (
+        <section className="mb-12">
+          <h2 className="section-title text-2xl mb-4">Schedule by Year</h2>
+          <div className="flex flex-wrap gap-3 mb-8">
+            {SCHEDULE_YEARS.filter((year) =>
+              entries.some((e) => e.date.startsWith(String(year))),
+            ).map((year) => (
+              <Link key={year} href={portYearPath(port.slug, year)} className="btn-primary text-sm">
+                {year} Schedule
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {monthKeys.length > 0 && (
         <section className="mb-12">
@@ -153,7 +163,7 @@ export function ShipScheduleHubView({ port }: { port: ShipSchedulePort }) {
       {port.faqs && port.faqs.length > 0 && <FAQSection faqs={port.faqs} title={`${port.name} Schedule FAQs`} />}
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/cruise-port-guide" className="btn-secondary text-sm">Cruise Port Guide</Link>
+        <Link href="/palma-cruise-port" className="btn-secondary text-sm">Cruise Port Guide</Link>
         <Link href="/shore-excursions" className="btn-secondary text-sm">Shore Excursions</Link>
         <Link href="/cruise-planner" className="btn-secondary text-sm">Cruise Planner</Link>
       </div>

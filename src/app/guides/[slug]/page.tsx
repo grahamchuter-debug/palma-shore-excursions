@@ -58,7 +58,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   return (
     <GuideArticle
       page={entry.page}
-      hubLabel="Andalusia Planning Guides"
+      hubLabel="Palma Planning Guides"
       getRelatedPage={getRelatedGuidePage}
     />
   );

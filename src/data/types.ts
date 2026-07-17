@@ -22,6 +22,19 @@ export interface ExcursionSupplier {
   notes?: string;
 }
 
+export interface CruiseSnapshot {
+  duration: string;
+  bestFor: string;
+  pace: string;
+  /** "Yes" | "No" | short note — whether the excursion travels beyond Palma */
+  travelsBeyondPalma: string;
+  walkingLevel?: string;
+  entrancesIncluded?: string;
+  foodIncluded?: string;
+  meetingNote?: string;
+  returnPlanning?: string;
+}
+
 export interface ExcursionPage {
   slug: string;
   title: string;
@@ -43,6 +56,18 @@ export interface ExcursionPage {
   featured?: boolean;
   /** Optional supplier — keep flexible for SEG, affiliates and future exclusives */
   supplier?: ExcursionSupplier;
+  /** Short label such as "Editor's Choice" or "Popular Choice" shown as a card badge */
+  badge?: string;
+  tourType?: string;
+  groupStyle?: string;
+  activityLevel?: string;
+  /** 3-5 unique bullets on why this suits cruise passengers specifically */
+  whyCruisePassengers?: string[];
+  cruiseSnapshot?: CruiseSnapshot;
+  /** e.g. "View Excursion" */
+  bookingCtaLabel?: string;
+  /** Optional affiliate or partner booking URL */
+  bookingUrl?: string;
 }
 
 export interface TransferOption {

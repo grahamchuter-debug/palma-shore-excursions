@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * Import Malaga cruise ship schedules from CSV into the site's JSON data file.
+ * Import Palma cruise ship schedules from CSV into the site's JSON data file.
  *
  * Usage:  node scripts/import-schedules.mjs
  *
- * Source:  data/schedule-sources/malaga.csv
- * Output:  src/data/imported-schedules/malaga.json
+ * Source:  data/schedule-sources/palma.csv
+ * Output:  src/data/imported-schedules/palma.json
  */
-
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,8 +14,8 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
-const SOURCE = resolve(ROOT, "data/schedule-sources/malaga.csv");
-const OUTPUT = resolve(ROOT, "src/data/imported-schedules/malaga.json");
+const SOURCE = resolve(ROOT, "data/schedule-sources/palma.csv");
+const OUTPUT = resolve(ROOT, "src/data/imported-schedules/palma.json");
 
 function parseCsvLine(line) {
   const values = [];
@@ -39,62 +38,44 @@ function parseCsvLine(line) {
     }
   }
   values.push(current);
-  return values.map((v) => v.trim());
-}
-
-function computeTimeInPort(arrival, departure) {
-  if (!arrival || !departure) return undefined;
-  const [ah, am] = arrival.split(":").map(Number);
-  const [dh, dm] = departure.split(":").map(Number);
-  if ([ah, am, dh, dm].some((n) => Number.isNaN(n))) return undefined;
-  let minutes = dh * 60 + dm - (ah * 60 + am);
-  if (minutes < 0) minutes += 24 * 60;
-  const hours = Math.floor(minutes / 60);
-  const mins = minutes % 60;
-  return mins === 0 ? `${hours}h` : `${hours}h ${mins}m`;
+  return values;
 }
 
 function main() {
   if (!existsSync(SOURCE)) {
-    console.error(`Source CSV not found: ${SOURCE}`);
+    console.error(`Missing schedule CSV: ${SOURCE}`);
+    console.error("Add a verified Palma CSV (date,ship,cruiseLine,arrive,depart,berth columns) before importing.");
     process.exit(1);
   }
 
-  const raw = readFileSync(SOURCE, "utf8").trim();
-  const lines = raw.split(/\r?\n/).filter((l) => l.trim().length > 0);
-  const header = parseCsvLine(lines[0]).map((h) => h.toLowerCase());
+  const text = readFileSync(SOURCE, "utf8").trim();
+  const lines = text.split(/\r?\n/).filter(Boolean);
+  if (lines.length < 2) {
+    writeFileSync(OUTPUT, "[]\n");
+    console.log(`Wrote empty schedule to ${OUTPUT}`);
+    return;
+  }
 
-  const idx = (name) => header.indexOf(name);
-  const iDate = idx("date");
-  const iShip = idx("ship");
-  const iLine = idx("cruiseline");
-  const iArr = idx("arrival");
-  const iDep = idx("departure");
-  const iPax = idx("passengers");
-  const iNotes = idx("notes");
-
+  const headers = parseCsvLine(lines[0]).map((h) => h.trim().toLowerCase());
   const entries = [];
-  for (let i = 1; i < lines.length; i++) {
-    const cols = parseCsvLine(lines[i]);
-    const arrival = iArr >= 0 ? cols[iArr] : "";
-    const departure = iDep >= 0 ? cols[iDep] : "";
+
+  for (const line of lines.slice(1)) {
+    const cols = parseCsvLine(line);
+    const row = Object.fromEntries(headers.map((h, i) => [h, (cols[i] ?? "").trim()]));
+    if (!row.date || !row.ship) continue;
     entries.push({
-      date: cols[iDate],
-      ship: cols[iShip],
-      cruiseLine: iLine >= 0 ? cols[iLine] : "",
-      arrival,
-      departure,
-      timeInPort: computeTimeInPort(arrival, departure),
-      terminal: "Muelle 2",
-      callType: "Port of call",
-      ...(iPax >= 0 && cols[iPax] ? { passengers: cols[iPax] } : {}),
-      ...(iNotes >= 0 && cols[iNotes] ? { notes: cols[iNotes] } : {}),
+      date: row.date,
+      ship: row.ship,
+      cruiseLine: row.cruiseline || row.cruise_line || row.line || "",
+      arrive: row.arrive || row.arrival || "",
+      depart: row.depart || row.departure || "",
+      berth: row.berth || row.terminal || "",
     });
   }
 
   mkdirSync(dirname(OUTPUT), { recursive: true });
-  writeFileSync(OUTPUT, JSON.stringify(entries, null, 2) + "\n");
-  console.log(`Imported ${entries.length} schedule entries to ${OUTPUT}`);
+  writeFileSync(OUTPUT, `${JSON.stringify(entries, null, 2)}\n`);
+  console.log(`Imported ${entries.length} Palma schedule entries → ${OUTPUT}`);
 }
 
 main();

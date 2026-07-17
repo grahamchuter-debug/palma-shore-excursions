@@ -8,7 +8,7 @@ export function EditorsCollection() {
         <p className="section-eyebrow">Editor&apos;s Collection</p>
         <h2 className="section-title mt-2">The best excursion for your kind of traveller</h2>
         <p className="section-subtitle">
-          Not every passenger wants the same Andalusia. Our editorial team recommends the strongest option
+          Not every passenger wants the same Mallorca day. Our editorial team recommends the strongest option
           for each traveller type — honest picks, not catalogue listings.
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

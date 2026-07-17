@@ -17,11 +17,11 @@ export const metadata = buildMetadata({
   description: wowCollection.metaDescription,
   path,
   image: image.src,
-  imageAlt: "The Wow Collection — future exclusive shore excursions from Malaga",
+  imageAlt: "The Wow Collection — future exclusive shore excursions from Palma",
   keywords: [
     "Wow Collection",
-    "Malaga shore excursions",
-    "small group Andalusia tour",
+    "Palma shore excursions",
+    "small group Mallorca tour",
     "exclusive cruise excursions",
   ],
 });
@@ -88,7 +88,9 @@ export default function WowCollectionPage() {
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {wowCollection.principles.map((p) => (
               <div key={p.title} className="card-feature">
-                <span className="text-2xl" aria-hidden="true">{p.emoji}</span>
+                <span className="text-2xl" aria-hidden="true">
+                  {p.emoji}
+                </span>
                 <h3 className="mt-2 font-display font-bold text-gray-900">{p.title}</h3>
                 <p className="mt-2 text-sm text-gray-600">{p.description}</p>
               </div>
@@ -99,7 +101,9 @@ export default function WowCollectionPage() {
           <div className="mt-6 space-y-4">
             {wowCollection.plannedExperiences.map((exp) => (
               <div key={exp.title} className="placeholder-widget text-left">
-                <p className="placeholder-widget-label">{exp.status === "in-preparation" ? "In preparation" : "Available"}</p>
+                <p className="placeholder-widget-label">
+                  {exp.status === "in-preparation" ? "In preparation" : "Available"}
+                </p>
                 <h3 className="mt-2 font-display text-lg font-bold text-gray-900">{exp.title}</h3>
                 <p className="mt-1 text-sm text-gray-600">{exp.description}</p>
               </div>
@@ -108,9 +112,9 @@ export default function WowCollectionPage() {
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Link href={SIGNATURE_EXPERIENCE_PATH} className="btn-secondary">
-              Signature Andalusia Discovery
+              Signature Mallorca Discovery
             </Link>
-            <Link href="/compare/best-malaga-shore-excursion" className="btn-secondary">
+            <Link href="/compare/which-palma-shore-excursion" className="btn-secondary">
               Current recommendations
             </Link>
           </div>

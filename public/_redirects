@@ -1,8 +1,12 @@
-# Canonical host redirect: www -> non-www (301). Cloudflare Pages supports
-# absolute-URL sources in _redirects for host normalisation.
-https://www.malagashoreexcursions.com/*  https://malagashoreexcursions.com/:splat  301!
-http://www.malagashoreexcursions.com/*   https://malagashoreexcursions.com/:splat  301!
+# Apex canonical — non-WWW HTTPS
+https://www.palmashoreexcursions.com/* https://palmashoreexcursions.com/:splat 301
+http://www.palmashoreexcursions.com/* https://palmashoreexcursions.com/:splat 301
+http://palmashoreexcursions.com/* https://palmashoreexcursions.com/:splat 301
 
-# HTTP -> HTTPS on the apex is handled automatically by Cloudflare
-# ("Always Use HTTPS"). Kept here as a defensive fallback.
-http://malagashoreexcursions.com/*       https://malagashoreexcursions.com/:splat  301!
+# Friendly aliases → canonical routes
+/cruise-port-guide /palma-cruise-port/ 301
+/cruise-port-guide/ /palma-cruise-port/ 301
+/ship-schedules /palma-cruise-ship-schedule/ 301
+/ship-schedules/ /palma-cruise-ship-schedule/ 301
+/ship-schedules/palma /palma-cruise-ship-schedule/ 301
+/ship-schedules/palma/ /palma-cruise-ship-schedule/ 301

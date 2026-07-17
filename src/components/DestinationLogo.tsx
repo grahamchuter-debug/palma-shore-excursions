@@ -61,7 +61,8 @@ function MarkSvg({
     );
   }
 
-  // Concept A (active): Anchor Arch — Andalusian arch meeting a restrained anchor.
+  // Concept A (active): Anchor Arch — Mediterranean arch meeting a restrained anchor.
+  // (Logo mark system originates from the Málaga World 2.0 prototype.)
   return (
     <svg
       width={size}
@@ -105,7 +106,7 @@ function MarkSvg({
  * Reusable World 2.0 destination wordmark.
  * HTML text for accessibility + inline SVG mark (no raster assets).
  *
- * Logo refinement (Málaga prototype): icon slightly subordinate to MÁLAGA,
+ * Logo refinement (Málaga prototype system): icon slightly subordinate to destination name,
  * tighter icon–text gap, strapline as light tracked caps in terracotta.
  */
 export function DestinationLogo({
@@ -117,7 +118,7 @@ export function DestinationLogo({
 }: DestinationLogoProps) {
   const { destination, descriptor, strapline, accessibleName } = destinationIdentity;
   const onDark = tone === "on-dark";
-  // ~12% smaller than the first prototype so MÁLAGA stays dominant
+  // ~12% smaller than the first prototype so the destination name stays dominant
   const markSize = variant === "mark" ? 32 : variant === "compact" ? 32 : 34;
 
   if (variant === "mark") {

@@ -7,20 +7,21 @@ import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
 import { excursions } from "@/data/excursions";
 import { getExcursionImage, excursionsHubImage } from "@/lib/images";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
-import { SignatureAndalusiaFeature } from "@/components/SignatureAndalusiaFeature";
+import { SignatureMallorcaFeature } from "@/components/SignatureMallorcaFeature";
 
 export const metadata = buildMetadata({
-  title: "Malaga Shore Excursions — Andalusia from Your Cruise Ship",
+  title: "Shore Excursions from Palma Cruise Port",
   description:
-    "Carefully selected Malaga shore excursions to Granada, Ronda, Caminito del Rey, Mijas and the historic city, with cruise-aware timing.",
+    "Carefully selected Palma shore excursions to Sóller, Valldemossa, the Caves of Drach, historic Palma, coastal adventure and private island days, with cruise-aware timing.",
   path: "/shore-excursions",
   image: excursionsHubImage.src,
   imageAlt: excursionsHubImage.alt,
   keywords: [
-    "Malaga shore excursions",
-    "Alhambra from Malaga cruise",
-    "Malaga cruise excursions",
-    "Andalusia shore excursions",
+    "Palma shore excursions",
+    "Mallorca shore excursions",
+    "Majorca shore excursions",
+    "Palma cruise excursions",
+    "Sóller from Palma cruise",
   ],
 });
 
@@ -36,41 +37,52 @@ export default function ShoreExcursionsPage() {
         data={[
           breadcrumbSchema(breadcrumbs),
           webPageSchema({
-            title: "Malaga Shore Excursions",
-            description: "Carefully selected Andalusia shore excursions from Malaga cruise port.",
+            title: "Palma Shore Excursions",
+            description:
+              "Carefully selected Mallorca shore excursions from Palma cruise port.",
             path: "/shore-excursions",
           }),
         ]}
       />
       <PageHero
         image={excursionsHubImage}
-        title="Malaga Shore Excursions"
-        subtitle="Cruise-timed tours for your chosen Andalusia — Granada, Ronda, Caminito del Rey, Malaga, the coast and food experiences with reliable return-to-ship planning."
+        title="Palma Shore Excursions"
+        subtitle="Cruise-timed tours for your chosen Mallorca — historic Palma, Sóller and Valldemossa, caves, scenic railways, the coast and food experiences with reliable return-to-ship planning."
         compact
       />
       <section className="section-padding">
         <div className="container-wide">
           <Breadcrumbs items={breadcrumbs} />
           <p className="mt-6 text-gray-600">
-            Not sure which destination? Start with our{" "}
-            <Link href="/compare/granada-or-ronda" className="font-semibold text-coastal-700 hover:underline">
-              Granada or Ronda comparison
+            Not sure which day to book? Start with{" "}
+            <Link
+              href="/compare/which-palma-shore-excursion"
+              className="font-semibold text-coastal-700 hover:underline"
+            >
+              which Palma shore excursion is right for you
             </Link>{" "}
-            or the{" "}
-            <Link href="/compare/best-malaga-shore-excursion" className="font-semibold text-coastal-700 hover:underline">
-              best excursion guide
+            or{" "}
+            <Link
+              href="/compare/palma-or-mallorca-island"
+              className="font-semibold text-coastal-700 hover:underline"
+            >
+              Palma or more of Mallorca
             </Link>
             .
           </p>
           <div className="mt-8">
-            <SignatureAndalusiaFeature embedded />
+            <SignatureMallorcaFeature embedded />
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {excursions.map((e) => {
               const image = getExcursionImage(e.slug);
-              const isEditorsChoice = e.slug === "granada-alhambra-full-day";
+              const isEditorsChoice = e.featured || e.badge === "Editor's Choice";
               return (
-                <Link key={e.slug} href={`/shore-excursions/${e.slug}`} className="card-editorial group overflow-hidden">
+                <Link
+                  key={e.slug}
+                  href={`/shore-excursions/${e.slug}`}
+                  className="card-editorial group overflow-hidden"
+                >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <ResponsiveImage
                       image={image}
@@ -82,7 +94,9 @@ export default function ShoreExcursionsPage() {
                       aria-hidden="true"
                     />
                     {isEditorsChoice ? (
-                      <span className="absolute left-3 top-3 badge-editors-choice">⭐ Editor&apos;s Choice</span>
+                      <span className="absolute left-3 top-3 badge-editors-choice">
+                        ⭐ Editor&apos;s Choice
+                      </span>
                     ) : (
                       <span className="absolute left-3 top-3 pill bg-white/90">{e.category}</span>
                     )}

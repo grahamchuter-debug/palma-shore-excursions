@@ -1,26 +1,27 @@
 {
-  "generated": "2026-07-10T00:00:00.000Z",
-  "site": "malagashoreexcursions.com",
+  "generated": "2026-07-17T00:00:00.000Z",
+  "site": "palmashoreexcursions.com",
   "files": [
     "hero-home.jpg",
     "og-default.jpg",
-    "cruise-port.jpg",
-    "alhambra.jpg",
-    "granada.jpg",
-    "ronda.jpg",
-    "caminito.jpg",
-    "mijas.jpg",
+    "port.jpg",
+    "cathedral.jpg",
     "historic.jpg",
-    "alcazaba.jpg",
-    "food.jpg",
-    "wine.jpg",
+    "soller.jpg",
+    "valldemossa.jpg",
+    "tramuntana.jpg",
+    "caves.jpg",
     "coast.jpg",
-    "white-villages.jpg",
+    "food.jpg",
+    "train.jpg",
+    "cycling.jpg",
+    "private.jpg",
+    "active.jpg",
     "compare.jpg",
-    "family.jpg",
     "walking.jpg",
     "photography.jpg",
-    "private.jpg"
+    "family.jpg",
+    "market.jpg"
   ],
-  "note": "Master images sourced from Wikimedia Commons (CC-licensed). See scripts/download-malaga-images.mjs."
+  "note": "Master images sourced from Wikimedia Commons (CC-licensed). See scripts/download-palma-images.mjs."
 }

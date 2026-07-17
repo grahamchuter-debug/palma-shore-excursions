@@ -5,54 +5,54 @@ import {
   getMonthsWithEntries,
   type ScheduleYear,
 } from "@/lib/schedule-utils";
-import malagaSchedule from "./imported-schedules/malaga.json";
+import palmaSchedule from "./imported-schedules/palma.json";
 
 const SCHEDULE_FAQS = [
   {
-    question: "How accurate are Malaga cruise ship schedules?",
+    question: "How accurate are Palma cruise ship schedules?",
     answer:
-      "These sample calls support planning and are updated from published information where available. Times, berths and even calls can change, so confirm with your cruise line before booking.",
+      "Published calls support planning and are updated from verified sources when available. Times, berths and even calls can change, so confirm with your cruise line before booking.",
   },
   {
-    question: "Where do cruise ships berth in Malaga?",
+    question: "Where do cruise ships berth in Palma?",
     answer:
-      "Most large ships use the Levante cruise terminals; selected smaller calls may use an inner berth near Muelle 2. Always check the assigned berth on the day.",
+      "Ships use the commercial port area west of Palma’s old town. Exact berth and shuttle arrangements vary by sailing — check your cruise line’s latest information on arrival.",
   },
   {
-    question: "Is a Malaga call long enough for the Alhambra?",
+    question: "Is a Palma call long enough for Sóller and Valldemossa?",
     answer:
-      "A long call can support a cruise-timed Granada excursion with confirmed admission. Calls with fewer than nine usable hours are better suited to Malaga, Mijas or another closer option.",
+      "A typical full day ashore can support a village excursion with a sensible return buffer. Short calls are usually better spent in Palma itself. Always work from usable hours and all-aboard time.",
   },
 ];
 
 const SCHEDULE_TIPS = [
   "Confirm all-aboard time rather than relying only on the published departure",
-  "Check whether your berth is at Levante or closer to Muelle 2 before estimating walking time",
-  "Book timed Alhambra and Caminito del Rey excursions well before sailing",
-  "Keep additional road contingency when returning from Granada, Ronda or Caminito del Rey",
+  "Check berth and shuttle arrangements before estimating walking time into Palma",
+  "Book village, cave and multi-transport island excursions with cruise timing in mind",
+  "Keep additional road contingency when returning from Sóller, Valldemossa or the east coast",
 ];
 
 export const schedulePorts: ShipSchedulePort[] = [
   {
-    slug: "malaga",
-    name: "Malaga",
+    slug: "palma",
+    name: "Palma de Mallorca",
     country: "Spain",
-    seoTitle: "Malaga Cruise Ship Schedule — Andalusia Port Calls",
+    seoTitle: "Palma Cruise Ship Schedule — Mallorca Port Calls",
     metaDescription:
-      "Malaga cruise ship schedule for 2026 and 2027 planning, with sample arrivals, departures and berths for Andalusia shore excursions.",
+      "Palma de Mallorca cruise ship schedule for planning, with arrivals, departures and berth context for Mallorca shore excursions when verified data is available.",
     intro:
-      "Malaga is the cruise gateway to Andalusia, with central city sights close to the harbour and full-day routes to Granada, Ronda and Caminito del Rey.",
+      "Palma de Mallorca is a major Mediterranean cruise port, with cathedral and old-town sightseeing close to the harbour and full-day routes into the Tramuntana, Sóller and eastern caves.",
     description:
-      "Where Southern Spain begins — walk into historic Malaga or use a long port call to reach Andalusia's great inland landscapes and monuments.",
+      "Your Mediterranean island day starts in Palma — walk into the historic centre or use a full port call to reach Mallorca’s mountain villages and natural highlights.",
     scheduleOverview:
-      "Malaga receives ships throughout the year, with particularly busy Mediterranean and repositioning periods in spring and autumn.",
+      "Verified ship-by-ship call data will appear here when supplied. Until then, use this hub for port planning guidance and confirm timings directly with your cruise line.",
     planningTips: SCHEDULE_TIPS,
     faqs: SCHEDULE_FAQS,
   },
 ];
 
 const scheduleData: Record<string, ScheduleEntry[]> = {
-  malaga: malagaSchedule as ScheduleEntry[],
+  palma: palmaSchedule as ScheduleEntry[],
 };
 
 export function getSchedulePortBySlug(slug: string): ShipSchedulePort | undefined {
@@ -79,6 +79,7 @@ export function getScheduleEntriesForMonth(slug: string, monthKey: string): Sche
   return filterEntriesByMonth(getScheduleEntries(slug), monthKey);
 }
 
+/** Returns month keys that have at least one entry. Empty when schedule data is not yet populated. */
 export function getVerifiedMonthKeys(slug: string): string[] {
   return getMonthsWithEntries(getScheduleEntries(slug));
 }

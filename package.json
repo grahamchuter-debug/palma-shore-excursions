@@ -1,5 +1,5 @@
 {
-  "name": "malaga-shore-excursions",
+  "name": "palma-shore-excursions",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,14 +9,14 @@
     "lint": "eslint",
     "check-links": "node scripts/check-links.mjs",
     "seo-qa": "node scripts/seo-qa.mjs",
-    "download:images": "node scripts/download-malaga-images.mjs && node scripts/optimize-images.mjs",
+    "download:images": "node scripts/download-palma-images.mjs && node scripts/optimize-images.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
     "generate:data": "echo 'Editorial data is maintained in src/data/'",
     "prebuild": "node scripts/optimize-images.mjs",
-    "qa:world2": "node ../World-2.0/scripts/world2-audit.js --site .",
+    "qa:world2": "node \"../Desktop folder/World-2.0/scripts/world2-audit.js\" --site .",
     "qa:full": "npm run build && npm run check-links && npm run seo-qa && npm run qa:world2 -- --build",
     "deploy": "npm run build && wrangler deploy",
-    "pages:deploy": "npm run build && wrangler pages deploy out --project-name=malaga-shore-excursions"
+    "pages:deploy": "npm run build && wrangler pages deploy out --project-name=palma-shore-excursions"
   },
   "engines": {
     "node": ">=20"

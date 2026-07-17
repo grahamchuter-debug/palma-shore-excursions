@@ -17,7 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (isScheduleYearSlug(slug)) return {};
   const port = getSchedulePortBySlug(slug);
   if (!port) return {};
-  return buildMetadata({ title: port.seoTitle, description: port.metaDescription, path: portHubPath(slug) });
+  // Primary schedule SEO URL is /palma-cruise-ship-schedule — keep this hub distinct
+  return buildMetadata({
+    title: `${port.name} Ship Schedule Data Hub`,
+    description: port.metaDescription,
+    path: "/palma-cruise-ship-schedule",
+  });
 }
 
 export default async function ShipSchedulePortPage({ params }: { params: Promise<{ slug: string }> }) {

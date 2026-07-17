@@ -8,7 +8,7 @@ const path = "/privacy";
 
 export const metadata = buildMetadata({
   title: "Privacy Policy",
-  description: `Privacy policy for ${SITE.name} — how we handle information submitted through our enquiry form and site analytics.`,
+  description: `Privacy policy for ${SITE.name} (${SITE.domain}) — how we handle information submitted through our enquiry form and site analytics.`,
   path,
   noindex: true,
 });
@@ -21,15 +21,33 @@ const breadcrumbs = [
 export default function PrivacyPage() {
   return (
     <>
-      <JsonLd data={[breadcrumbSchema(breadcrumbs), webPageSchema({ title: "Privacy Policy", description: `Privacy policy for ${SITE.name}.`, path })]} />
+      <JsonLd
+        data={[
+          breadcrumbSchema(breadcrumbs),
+          webPageSchema({ title: "Privacy Policy", description: `Privacy policy for ${SITE.name}.`, path }),
+        ]}
+      />
       <section className="section-padding">
         <div className="container-wide max-w-3xl">
           <Breadcrumbs items={breadcrumbs} />
           <h1 className="section-title mt-8">Privacy Policy</h1>
           <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
-            <p>{SITE.name} ({SITE.url}) is an independent Malaga and Andalusia cruise planning resource. This policy explains what information we collect and how we use it.</p>
-            <p>When you submit our enquiry form, we receive your name, email address and message content solely to respond to your request. We do not sell personal data to third parties.</p>
-            <p>Like most websites, we may use standard analytics to understand how visitors use our guides. You can contact us at {SITE.email} with any privacy questions.</p>
+            <p>
+              {SITE.name} ({SITE.url}) is an independent Palma and Mallorca cruise planning resource. This
+              policy explains what information we collect and how we use it.
+            </p>
+            <p>
+              When you submit our enquiry form, we receive your name, email address and message content solely
+              to respond to your request. We do not sell personal data to third parties.
+            </p>
+            <p>
+              Like most websites, we may use standard analytics to understand how visitors use our guides. You
+              can contact us at {SITE.email} with any privacy questions.
+            </p>
+            <p>
+              Some excursion links may lead to partner booking sites. Those sites have their own privacy
+              policies; we encourage you to review them before providing personal details.
+            </p>
           </div>
         </div>
       </section>

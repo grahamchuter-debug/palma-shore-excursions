@@ -29,43 +29,43 @@ export interface DayAshoreItem {
 }
 
 export const dayAshoreIntro =
-  "The essential things cruise passengers should know before exploring Málaga.";
+  "The essential things cruise passengers should know before exploring Palma and Mallorca.";
 
 export const dayAshoreItems: DayAshoreItem[] = [
   {
     id: "time-in-port",
     title: "Typical time in port",
-    body: "Most cruise calls allow around 8–10 hours ashore, although passengers should always check their own ship schedule.",
+    body: "Most cruise calls allow around 8–10 hours ashore, although passengers should always check their own ship schedule and all-aboard time.",
     icon: "clock",
   },
   {
     id: "excursion-length",
     title: "Ideal excursion length",
-    body: "A 4–6 hour excursion usually leaves enough time to explore Málaga without making the day feel rushed.",
+    body: "A 4–6 hour excursion usually leaves enough time to enjoy Palma or a focused island highlight without making the return feel rushed.",
     icon: "route",
   },
   {
     id: "walking-level",
     title: "Walking level",
-    body: "Moderate. The historic centre is compact and walkable, but visits to Gibralfaro and some viewpoints involve slopes or steps.",
+    body: "Moderate. The old town is compact and atmospheric, but cobbles, cathedral approaches and village streets often involve slopes or uneven paving.",
     icon: "walk",
   },
   {
     id: "best-early-stop",
     title: "Best early stop",
-    body: "Visit the Alcazaba earlier in the day for cooler temperatures and fewer crowds.",
+    body: "Visit Palma Cathedral and Parc de la Mar earlier for softer light and a cooler start before the midday heat.",
     icon: "sunrise",
   },
   {
     id: "do-not-miss",
     title: "Do not miss",
-    body: "The views across Málaga, the harbour and the Mediterranean from Gibralfaro.",
+    body: "The cathedral rising above the bay — or, if you leave the city, the mountain character of Valldemossa and Sóller.",
     icon: "viewpoint",
   },
   {
     id: "local-flavour",
     title: "Local flavour",
-    body: "Make time for tapas, grilled sardines or a drink in the old town before returning to the ship.",
+    body: "Make time for a market stop, an ensaimada or a waterfront café before returning to the ship.",
     icon: "food",
   },
 ];

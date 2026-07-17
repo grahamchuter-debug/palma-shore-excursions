@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Post-build SEO QA checks for Malaga Shore Excursions static export.
+ * Post-build SEO QA checks for Palma Shore Excursions static export.
  */
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
@@ -51,11 +51,15 @@ if (!existsSync(OUT)) {
 
   // 2. noindex on important pages
   const indexableMustNotHaveNoindex = htmlFiles.filter(
-    (f) => !f.includes("/privacy/") && !f.includes("/terms/"),
+    (f) =>
+      !f.includes("/privacy/") &&
+      !f.includes("/terms/") &&
+      !f.includes("/__none__/") &&
+      !f.includes("_not-found"),
   );
   for (const f of indexableMustNotHaveNoindex) {
     const html = readFileSync(f, "utf8");
-    if (/noindex/i.test(html) && !f.includes("404") && !f.includes("_not-found")) {
+    if (/noindex/i.test(html) && !f.includes("404")) {
       errors.push(`Unexpected noindex: ${f.replace(OUT, "")}`);
     }
   }
@@ -84,6 +88,7 @@ if (!existsSync(OUT)) {
   // 4. Duplicate titles (sample)
   const titles = new Map();
   for (const f of htmlFiles) {
+    if (f.includes("/__none__/") || f.includes("_not-found")) continue;
     const html = readFileSync(f, "utf8");
     const m = html.match(/<title>([^<]+)<\/title>/);
     if (m) {

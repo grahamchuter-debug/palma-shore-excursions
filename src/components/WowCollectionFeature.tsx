@@ -5,7 +5,7 @@ import { WOW_COLLECTION_PATH } from "@/data/wow-collection";
 import { SIGNATURE_EXPERIENCE_PATH } from "@/data/signature-experience";
 
 export function WowCollectionFeature() {
-  const image = subjectImages.caminito;
+  const image = subjectImages.tramuntana ?? subjectImages.soller ?? subjectImages.coast;
 
   return (
     <section className="section-padding bg-coastal-900 text-white">
@@ -28,25 +28,26 @@ export function WowCollectionFeature() {
           </div>
 
           <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12">
-            <p className="section-eyebrow text-coastal-200">Future Andalusia exclusives</p>
+            <p className="section-eyebrow text-coastal-200">Future Mallorca exclusives</p>
             <h2 className="font-display text-3xl font-semibold sm:text-4xl mt-1">
               The Wow Collection
             </h2>
             <p className="mt-4 text-base leading-relaxed text-white/85 italic">
-              &ldquo;A future collection of distinctive small-group Andalusian days, developed around
+              &ldquo;A future collection of distinctive small-group Mallorca days, developed around
               local expertise, thoughtful pacing and the realities of a cruise call.&rdquo;
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
-              The collection is still in preparation. Proposed experiences include an Exclusive Ronda
-              Day, a carefully timed Caminito del Rey adventure and private Andalusia routes. None should
-              be treated as currently bookable until partners, access and sailing-specific logistics are confirmed.
+              The collection is still in preparation. Proposed experiences include an exclusive
+              Tramuntana villages day, a carefully paced railway journey and private Mallorca routes.
+              None should be treated as currently bookable until partners and sailing-specific logistics
+              are confirmed.
             </p>
 
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
               {[
-                { emoji: "🌉", text: "Future Exclusive Ronda experience" },
-                { emoji: "🥾", text: "Future Caminito del Rey concept" },
-                { emoji: "🚗", text: "Future private Andalusia routes" },
+                { emoji: "⛰️", text: "Future Exclusive Tramuntana villages day" },
+                { emoji: "🚂", text: "Future Exclusive Railway Journey" },
+                { emoji: "🚗", text: "Future private Mallorca routes" },
                 { emoji: "⏰", text: "Cruise-first timing and return buffers" },
               ].map((item) => (
                 <div key={item.text} className="flex items-start gap-2 text-sm text-white/80">
@@ -60,8 +61,11 @@ export function WowCollectionFeature() {
               <Link href={WOW_COLLECTION_PATH} className="btn-accent">
                 Explore The Wow Collection →
               </Link>
-              <Link href={SIGNATURE_EXPERIENCE_PATH} className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20">
-                Signature Andalusia Discovery
+              <Link
+                href={SIGNATURE_EXPERIENCE_PATH}
+                className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20"
+              >
+                Signature Mallorca Discovery
               </Link>
             </div>
           </div>

@@ -36,7 +36,7 @@ export function HighlightArticle({ page }: { page: AttractionPage }) {
           articleSchema({ title: page.seoTitle, description: page.metaDescription, path, image: image.src }),
         ]}
       />
-      <PhotoHeroBand image={image} eyebrow="From Malaga Cruise Port" title={page.title} subtitle={page.tagline} compact />
+      <PhotoHeroBand image={image} eyebrow="From Palma Cruise Port" title={page.title} subtitle={page.tagline} compact />
 
       <section className="section-padding">
         <div className="container-wide max-w-4xl">
@@ -123,15 +123,22 @@ export function HighlightArticle({ page }: { page: AttractionPage }) {
             </div>
           )}
 
-          {(page.slug === "ronda-shore-excursion-guide" || page.slug === "historic-malaga-guide") && (
+          {(page.slug.includes("soller") ||
+            page.slug.includes("valldemossa") ||
+            page.slug.includes("tramuntana") ||
+            page.slug.includes("palma")) && (
             <SignatureExperienceCallout
-              context={page.slug === "ronda-shore-excursion-guide" ? "ronda" : "malaga"}
+              context={
+                page.slug.includes("palma") && !page.slug.includes("soller")
+                  ? "palma"
+                  : "tramuntana"
+              }
             />
           )}
 
           {related.length > 0 && (
             <div className="mt-12">
-              <h2 className="section-title text-2xl mb-6">More Andalusia guides</h2>
+              <h2 className="section-title text-2xl mb-6">More Mallorca guides</h2>
               <div className="grid gap-4 sm:grid-cols-3">
                 {related.map(
                   (r) =>
@@ -147,7 +154,7 @@ export function HighlightArticle({ page }: { page: AttractionPage }) {
           )}
 
           <div className="mt-12">
-            <FAQSection faqs={page.faqs} title={`${page.attractionName} from Malaga — FAQs`} />
+            <FAQSection faqs={page.faqs} title={`${page.attractionName} from Palma — FAQs`} />
           </div>
           <div className="mt-12">
             <PlanningLinks />

@@ -8,12 +8,17 @@ import { getAllFaqs } from "@/data/faqs";
 
 const path = "/faq";
 const description =
-  "Frequently asked questions about Malaga cruise planning — Granada, Ronda, Caminito del Rey, shore excursions and getting back to your ship.";
+  "Frequently asked questions about Palma cruise planning — cathedral and old town, Sóller, Valldemossa, caves, shore excursions and getting back to your ship.";
 
 export const metadata = buildMetadata({
-  title: "Malaga & Andalusia Cruise FAQ",
+  title: "Palma & Mallorca Cruise FAQ",
   description,
   path,
+  keywords: [
+    "Palma cruise FAQ",
+    "Palma shore excursions questions",
+    "Mallorca cruise port FAQ",
+  ],
 });
 
 const breadcrumbs = [
@@ -25,8 +30,18 @@ export default function FaqPage() {
   const faqs = getAllFaqs();
   return (
     <>
-      <JsonLd data={[breadcrumbSchema(breadcrumbs), faqSchema(faqs), webPageSchema({ title: "Malaga & Andalusia Cruise FAQ", description, path })]} />
-      <PageHero title="Malaga & Andalusia Cruise Planning FAQ" subtitle="Answers to the most common questions from Malaga cruise passengers." compact />
+      <JsonLd
+        data={[
+          breadcrumbSchema(breadcrumbs),
+          faqSchema(faqs),
+          webPageSchema({ title: "Palma & Mallorca Cruise FAQ", description, path }),
+        ]}
+      />
+      <PageHero
+        title="Palma & Mallorca Cruise Planning FAQ"
+        subtitle="Answers to the most common questions from Palma cruise passengers — city days, island excursions and return-to-ship timing."
+        compact
+      />
       <section className="section-padding">
         <div className="container-wide max-w-4xl">
           <Breadcrumbs items={breadcrumbs} />

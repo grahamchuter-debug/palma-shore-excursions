@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Mediterranean azure — Malaga harbour and Andalusian coast */
+  /* Mediterranean azure — Palma harbour and Mallorca coast */
   --color-coastal-50: #eef8fb;
   --color-coastal-100: #d3edf5;
   --color-coastal-200: #9ed8e8;
@@ -12,11 +12,11 @@
   --color-coastal-700: #125368;
   --color-coastal-800: #124354;
   --color-coastal-900: #0d2d3a;
-  /* Sun-warmed sandstone and white-village neutrals */
+  /* Sun-warmed Palma sandstone and limestone neutrals */
   --color-sandstone-300: #ead8b9;
   --color-sandstone-400: #d3b27d;
   --color-sandstone-500: #b98b4f;
-  /* Olive greens — Andalusian hills and groves */
+  /* Olive and pine greens — Tramuntana hills and groves */
   --color-forest-50: #f4f6ec;
   --color-forest-100: #e3e8cf;
   --color-forest-600: #66753a;

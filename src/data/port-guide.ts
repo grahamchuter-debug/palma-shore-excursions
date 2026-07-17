@@ -13,108 +13,126 @@ export interface PortGuideSection {
 }
 
 export const portGuideContent = {
-  title: "Malaga Cruise Port Guide",
+  title: "Palma Cruise Port Guide",
   subtitle:
-    "Terminals, walking times, historic Malaga, food, transport and sensible return-to-ship planning.",
+    "Berths, shuttles, historic Palma, food, transport and sensible return-to-ship planning.",
+  notice:
+    "Cruise berth, shuttle and transport arrangements can change. Check your cruise line’s latest information before leaving the ship.",
   terminals: [
     {
-      name: "Levante Cruise Terminals",
-      quay: "Outer eastern harbour breakwater, including the main cruise terminal buildings",
-      usedBy: "Most medium, large and mega-ships calling at Malaga",
+      name: "West harbour cruise berths",
+      quay: "Commercial port area west of Palma’s old town and cathedral waterfront",
+      usedBy: "Most large cruise ships calling at Palma de Mallorca",
       cityAccess:
-        "Approximately 25–35 minutes on foot to Calle Larios, depending on berth and terminal exit; port shuttle and taxis are commonly available",
+        "Depending on the berth, the cathedral and historic centre may be a waterfront walk or a short shuttle or taxi ride — confirm arrangements for your sailing",
     },
     {
-      name: "Muelle 2 / Palmeral",
-      quay: "Inner harbour beside the Palmeral de las Sorpresas and Muelle Uno",
-      usedBy: "Smaller ships and selected calls when inner berths are assigned",
+      name: "Closer waterfront positions",
+      quay: "Selected berths nearer the historic waterfront when assigned",
+      usedBy: "Occasional calls when a nearer berth is available",
       cityAccess:
-        "About 10–15 minutes on foot to Calle Larios, the cathedral quarter and the Roman Theatre",
+        "Can place Parc de la Mar and the cathedral quarter within a more comfortable walking range; still verify shuttle needs on the day",
     },
   ] as Terminal[],
   sections: [
     {
-      heading: "Where cruise ships dock in Malaga",
+      heading: "Where cruise ships dock in Palma",
       paragraphs: [
-        "Most ships dock at the Levante cruise facilities on Malaga harbour's eastern breakwater. The exact walk depends on the berth: outer terminals are farther from the centre, while occasional inner-harbour berths sit beside Muelle 2.",
-        "Check the ship's daily programme and signs in the terminal before setting out. Port shuttles may run between outer berths and a stop nearer the city, but service and pricing can vary by call.",
-        "Malaga is one of the easiest major Andalusian ports for a city day because the historic centre begins just beyond the harbour. Granada, Ronda and Caminito del Rey are inland full-day journeys and need different timing.",
+        "Cruise ships calling at Palma de Mallorca use the commercial port area west of the old town. The exact distance to the cathedral and historic centre depends on the berth assigned for your sailing.",
+        "Some passengers enjoy a waterfront stroll into the city; others need a shuttle or taxi for the first section. Treat published walking times as approximate and confirm signs, daily programmes and cruise-line notices on arrival.",
+        "Palma is an excellent city-port for a cathedral and old-town day. Sóller, Valldemossa, the Tramuntana Mountains and the Caves of Drach are island journeys that need different timing and return planning.",
       ],
     },
     {
-      heading: "Walking from the port",
+      heading: "Berths, shuttles and city access",
       paragraphs: [
-        "From Muelle 2, follow the Palmeral de las Sorpresas towards Plaza de la Marina. Calle Larios begins across the main road, while the cathedral is a short walk east through the old centre.",
-        "From the outer Levante terminals, allow roughly 25–35 minutes to central Malaga if walking the full distance. The route is mostly level and follows the harbour, but summer heat can make a shuttle or taxi worthwhile.",
-        "Muelle Uno's restaurants, shops and marina promenade are useful at the end of the day because they remain close to the route back to the ship.",
+        "Berth assignments and shuttle operations can change by ship, season and harbour logistics. Do not assume yesterday’s arrangement applies to your call.",
+        "If a shuttle is offered, note the pickup point for your return as carefully as the outbound stop. Independent taxis are commonly available when ships are in port; agree the destination clearly — “Palma port” covers more than one access point.",
+        "Cruise berth, shuttle and transport arrangements can change. Check your cruise line’s latest information before leaving the ship.",
       ],
     },
     {
-      heading: "Historic Malaga highlights",
+      heading: "Walking into historic Palma",
       paragraphs: [
-        "The Roman Theatre and Alcazaba sit together below Gibralfaro. The theatre is easy to view from street level; the Alcazaba rewards a longer visit but includes slopes, steps and uneven surfaces.",
-        "Malaga Cathedral, often called La Manquita, anchors the old centre near Calle Larios. Allow time for the surrounding lanes rather than treating the building as a quick photograph.",
-        "The Picasso Museum is in the historic centre near the artist's birthplace at Plaza de la Merced. Timed or advance tickets are sensible on busy cruise days, especially if the museum is your main priority.",
+        "When your berth allows walking, the waterfront approach towards Parc de la Mar and Palma Cathedral (La Seu) is one of the Mediterranean’s most memorable port arrivals.",
+        "From the cathedral area, the old town fans inland through lanes, courtyards and squares. Wear comfortable shoes — historic paving is uneven and some approaches include slopes.",
+        "On hot days, or when the ship is berthed farther out, a shuttle or taxi for the first or last stretch often preserves energy for the city itself.",
+      ],
+    },
+    {
+      heading: "What you can explore independently",
+      paragraphs: [
+        "Palma Cathedral, Parc de la Mar, the old town, Mercat de l’Olivar and stretches of the waterfront are realistic independent goals when berth logistics are clear and you keep a generous terminal buffer.",
+        "Bellver Castle sits above the city and adds travel and climbing; include it only on a longer call with a taxi or bus plan.",
+        "Mountain villages, cave visits and multi-transport island circuits are usually better as organised excursions because road timing and meeting points matter more.",
+      ],
+    },
+    {
+      heading: "When an organised excursion makes sense",
+      paragraphs: [
+        "Book an organised tour when you want Sóller, Valldemossa, the historic railway, the Caves of Drach or a private island day with clear cruise-aware routing.",
+        "Organised transport does not remove your responsibility to follow all-aboard time. Read inclusions carefully — entrance fees, train tickets and food are only included when stated.",
+        "If your usable hours ashore are short, stay in Palma rather than forcing a long island circuit.",
       ],
     },
     {
       heading: "Markets, food and local flavour",
       paragraphs: [
-        "Atarazanas Market is the best compact introduction to Malaga produce, seafood, olives and cured meats. It is primarily a daytime market, so visit before a late afternoon return.",
-        "For a quick local lunch, look for fried fish, porra antequerana or tapas in the old centre. Espetos are traditionally grilled by the beach and suit passengers with time for a taxi to a nearby seafront district.",
-        "Sweet Malaga wine is distinctive but strong. Keep tastings moderate on a walking day and check that any food tour finishes with ample time to reach the terminal.",
+        "Mercat de l’Olivar is a useful central introduction to Mallorcan produce, seafood and pastry culture. Morning visits usually work best.",
+        "Look for ensaimadas, savoury snacks and seasonal market produce rather than treating lunch as a long tasting menu on a tight port day.",
+        "Keep the final hour ashore close to your known return route so a café stop does not threaten the ship buffer.",
       ],
     },
     {
-      heading: "Transport beyond the city",
+      heading: "Heat, footwear and mobility",
       paragraphs: [
-        "Taxis wait at or near the terminal when ships are in port. Confirm the fare or meter and show the terminal name for the return, because 'Malaga port' covers several possible access points.",
-        "The main railway and bus stations are west of the historic centre. Local trains work well along parts of the Costa del Sol, but public transport is not the best cruise-day method for the Alhambra, Ronda or Caminito del Rey.",
-        "Granada is generally 1 hour 30 minutes to 2 hours by road each way; Ronda is similar on more winding roads. Caminito del Rey requires timed access plus coordination between trail entrances, so transport cannot be treated as a simple return taxi.",
+        "Mallorca summers are hot and bright. Carry water, sun protection and a light layer for breezy waterfront or mountain stops.",
+        "Cobbles, cathedral approaches and village streets reward proper walking shoes. Sandals without grip are a common mistake.",
+        "Accessibility varies widely: flat promenade sections can be manageable, while old-town gradients, castle approaches and cave pathways are not universally suitable. Discuss needs before booking any organised tour.",
       ],
     },
     {
-      heading: "A realistic independent city day",
+      heading: "Season, language and currency",
       paragraphs: [
-        "Start with the Roman Theatre and Alcazaba before the hottest part of the day. Continue through the cathedral quarter and Calle Larios to Atarazanas Market for lunch or tastings.",
-        "Use the afternoon for the Picasso Museum, Plaza de la Merced or an unhurried waterfront walk. Trying to include every museum and Gibralfaro Castle will make an otherwise easy port day feel rushed.",
-        "Keep the final hour ashore close to Muelle Uno and the Palmeral so that an unexpected queue or wrong turn does not threaten all-aboard.",
+        "Palma receives ships across the year, with busy Mediterranean seasons in spring and autumn. Summer heat and peak queues change the feel of a city day even when sailing times look similar.",
+        "Spain uses the euro. Catalan and Spanish are widely used locally; English is commonly understood in visitor areas. Cards are widespread, but a little cash remains useful for markets and small cafés.",
+        "Travel considerately in residential lanes and village streets — Palma and Mallorca are living places, not open-air museums.",
       ],
     },
     {
       heading: "Return-to-ship planning",
       paragraphs: [
-        "Confirm the ship's all-aboard time, which is earlier than the published departure. For a city day, plan to reach the terminal 60–90 minutes before all-aboard.",
-        "For Granada, Ronda or Caminito del Rey, the operator should plan backwards from the ship with motorway, parking and access contingencies. A journey time shown by a map app is not an adequate return plan.",
-        "Independent travellers are responsible for reaching the ship. If a long inland trip does not leave a conservative margin, choose Malaga city or the nearby coast instead.",
+        "Confirm the ship’s all-aboard time, which is earlier than the published departure. For a city day, plan to reach the terminal 60–90 minutes before all-aboard.",
+        "For Sóller, Valldemossa, caves or train–tram–boat circuits, the operator should plan backwards from the ship with traffic and mountain-road contingency. A map-app journey time is not an adequate return plan.",
+        "Independent travellers are responsible for reaching the ship. If an island idea does not leave a conservative margin, choose Palma instead.",
       ],
     },
   ] as PortGuideSection[],
   faqs: [
     {
-      question: "Can I walk into Malaga from the cruise terminal?",
+      question: "Can I walk into Palma from the cruise terminal?",
       answer:
-        "Yes. Allow around 10–15 minutes from Muelle 2 or 25–35 minutes from the outer Levante terminals. A shuttle or taxi may be available.",
+        "Sometimes yes, sometimes not comfortably. It depends on your berth. Confirm walking versus shuttle arrangements on arrival rather than relying on a generic estimate.",
     },
     {
-      question: "What can I see close to Malaga port?",
+      question: "What can I see close to Palma cruise port?",
       answer:
-        "Calle Larios, the cathedral, Roman Theatre, Alcazaba, Picasso Museum area, Atarazanas Market and Muelle Uno are all in or beside the compact centre.",
+        "Palma Cathedral, Parc de la Mar, the old town, markets and waterfront promenades are the strongest nearby goals when access is clear.",
     },
     {
-      question: "Do I need transport for the Alcazaba?",
+      question: "Do I need a tour to see Sóller?",
       answer:
-        "Usually not. It is walkable from the harbour and city centre, though the site itself includes uphill paths and steps.",
-    },
-    {
-      question: "Is Granada an easy independent trip from the port?",
-      answer:
-        "No. The distance, timed Alhambra entry and return risk make an organised cruise-timed excursion the more realistic approach.",
+        "Independent travel is possible for experienced travellers, but organised excursions usually make cruise-day timing clearer for villages and multi-stop island routes.",
     },
     {
       question: "How early should I be back?",
       answer:
-        "Reach the terminal 60–90 minutes before all-aboard for a city day, with a larger road contingency for inland excursions.",
+        "Reach the terminal 60–90 minutes before all-aboard for a city day, with a larger contingency after island excursions.",
+    },
+    {
+      question: "Can berth and shuttle arrangements change?",
+      answer:
+        "Yes. Cruise berth, shuttle and transport arrangements can change. Check your cruise line’s latest information before leaving the ship.",
     },
   ] as FAQ[],
 };
@@ -122,3 +140,4 @@ export const portGuideContent = {
 export const terminals = portGuideContent.terminals;
 export const portGuideSections = portGuideContent.sections;
 export const portGuideFaqs = portGuideContent.faqs;
+export const portGuideNotice = portGuideContent.notice;

@@ -1,23 +1,29 @@
 import Link from "next/link";
 import { SignatureExperienceBadge } from "@/components/SignatureExperienceBadge";
-import { signatureAndalusiaExperience, SIGNATURE_EXPERIENCE_PATH } from "@/data/signature-experience";
+import { signatureMallorcaExperience, SIGNATURE_EXPERIENCE_PATH } from "@/data/signature-experience";
 import { subjectImages } from "@/lib/images";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 interface SignatureExperienceCalloutProps {
-  context?: "ronda" | "malaga" | "general";
+  context?: "tramuntana" | "palma" | "general";
   compact?: boolean;
 }
 
 const CONTEXT_COPY = {
-  ronda: "Considering Ronda? Our future Signature Andalusia Discovery is being designed as a carefully paced small-group Ronda and white-village day.",
-  malaga: "Exploring Malaga? Our future Wow Collection will add distinctive small-group Andalusian routes developed around cruise timings.",
-  general: "Our future flagship Signature Andalusia Discovery is a proposed small-group Ronda experience. It is still in preparation.",
+  tramuntana:
+    "Considering the Tramuntana villages? Our future Signature Mallorca Discovery is being designed as a carefully paced small-group Sóller and Valldemossa day.",
+  palma:
+    "Exploring Palma? Our future Wow Collection will add distinctive small-group Mallorca routes developed around cruise timings.",
+  general:
+    "Our future flagship Signature Mallorca Discovery is a proposed small-group Tramuntana experience. It is still in preparation.",
 };
 
-export function SignatureExperienceCallout({ context = "general", compact = false }: SignatureExperienceCalloutProps) {
-  const image = subjectImages.ronda;
-  const comingSoon = signatureAndalusiaExperience.comingSoon;
+export function SignatureExperienceCallout({
+  context = "general",
+  compact = false,
+}: SignatureExperienceCalloutProps) {
+  const image = subjectImages.tramuntana;
+  const comingSoon = signatureMallorcaExperience.comingSoon;
 
   if (compact) {
     return (
@@ -27,7 +33,9 @@ export function SignatureExperienceCallout({ context = "general", compact = fals
         ) : (
           <SignatureExperienceBadge showEditorsChoice />
         )}
-        <h2 className="mt-4 font-display text-xl font-bold text-gray-900">{signatureAndalusiaExperience.title}</h2>
+        <h2 className="mt-4 font-display text-xl font-bold text-gray-900">
+          {signatureMallorcaExperience.title}
+        </h2>
         <p className="mt-2 text-sm leading-relaxed text-gray-600">{CONTEXT_COPY[context]}</p>
         <Link href={SIGNATURE_EXPERIENCE_PATH} className="btn-accent mt-5 inline-flex text-sm">
           Learn more →
@@ -45,7 +53,7 @@ export function SignatureExperienceCallout({ context = "general", compact = fals
           <SignatureExperienceBadge showEditorsChoice />
         )}
         <h2 className="mt-4 font-display text-2xl font-bold text-gray-900 sm:text-3xl">
-          {signatureAndalusiaExperience.title}
+          {signatureMallorcaExperience.title}
         </h2>
         <p className="mt-3 text-base leading-relaxed text-gray-600">{CONTEXT_COPY[context]}</p>
         <div className="mt-6 flex flex-wrap gap-3">
@@ -58,11 +66,7 @@ export function SignatureExperienceCallout({ context = "general", compact = fals
         </div>
       </div>
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-        <ResponsiveImage
-          image={image}
-          role="card"
-          imgClassName="h-full w-full object-cover"
-        />
+        <ResponsiveImage image={image} role="card" imgClassName="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-coastal-900/40 to-transparent" aria-hidden="true" />
       </div>
     </div>

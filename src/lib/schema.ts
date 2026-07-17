@@ -75,7 +75,7 @@ export function articleSchema({
   };
 }
 
-/** TravelAgency for the Malaga and Andalusia cruise planning brand. */
+/** TravelAgency for the Palma and Mallorca cruise planning brand. */
 export function travelAgencySchema() {
   return {
     "@context": "https://schema.org",
@@ -87,23 +87,34 @@ export function travelAgencySchema() {
     areaServed: [
       {
         "@type": "City",
-        name: "Malaga",
+        name: "Palma de Mallorca",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Malaga",
-          addressRegion: "Andalusia",
+          addressLocality: "Palma",
+          addressRegion: "Balearic Islands",
+          addressCountry: "ES",
+        },
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Mallorca",
+        address: {
+          "@type": "PostalAddress",
+          addressRegion: "Balearic Islands",
           addressCountry: "ES",
         },
       },
     ],
     knowsAbout: [
-      "Malaga shore excursions",
-      "Alhambra from Malaga",
-      "Malaga cruise port guide",
-      "Ronda from Malaga",
-      "Caminito del Rey from Malaga",
-      "Andalusia cruise excursions",
-      "Malaga cruise planner",
+      "Palma shore excursions",
+      "Palma de Mallorca shore excursions",
+      "Mallorca shore excursions",
+      "Majorca shore excursions",
+      "Palma cruise port guide",
+      "Sóller from Palma",
+      "Valldemossa from Palma",
+      "Caves of Drach from Palma",
+      "Palma cruise planner",
     ],
     contactPoint: {
       "@type": "ContactPoint",

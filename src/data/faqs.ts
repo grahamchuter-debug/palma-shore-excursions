@@ -3,99 +3,79 @@ import { getHomepageFaqs } from "./homepage";
 
 export const extraFaqs: FAQ[] = [
   {
-    question: "Where do cruise ships dock in Malaga?",
+    question: "Where do cruise ships dock in Palma?",
     answer:
-      "Most cruise ships use the Levante cruise terminals on the eastern harbour breakwater. Some smaller ships berth closer to Muelle 2 and the Palmeral de las Sorpresas. Berths change, so check your ship's information on arrival.",
+      "Ships use the commercial port area west of Palma’s old town. Exact berths vary by sailing, so check your cruise line’s information for walking distance, shuttle use and return points.",
   },
   {
-    question: "How far is Malaga cruise port from the historic centre?",
+    question: "How far is Palma cruise port from the cathedral?",
     answer:
-      "Calle Larios is roughly 10–20 minutes on foot from Muelle 2 and usually 25–35 minutes from the outer Levante terminals. A port shuttle or taxi may shorten the first section.",
+      "It depends on the berth. Some positions allow a waterfront walk to Parc de la Mar and La Seu; others are better with a shuttle or taxi. Confirm on the day rather than relying on a single fixed walking time.",
   },
   {
-    question: "Can I explore Malaga independently?",
+    question: "Can I explore Palma independently?",
     answer:
-      "Yes. The historic centre is compact and the cathedral, Picasso Museum area, Roman Theatre, Alcazaba, Atarazanas Market and waterfront can fit into one well-paced walking day.",
+      "Yes when berth logistics are clear. The cathedral, old town, market and waterfront can fill a rewarding day. Keep a 60–90 minute terminal buffer and do not treat mountain villages or caves as casual DIY add-ons.",
   },
   {
-    question: "What is the best independent Malaga itinerary?",
+    question: "What is the best independent Palma itinerary?",
     answer:
-      "Walk from the port to the Roman Theatre and Alcazaba in the morning, continue through the cathedral quarter, lunch near Atarazanas Market, then return via Calle Larios, Muelle Uno and the waterfront.",
+      "Start at Palma Cathedral and Parc de la Mar, wander the old town courtyards and lanes, visit Mercat de l’Olivar if timing suits, then return along the waterfront with a clear path to your shuttle or berth.",
   },
   {
-    question: "How far is Granada from Malaga cruise port?",
+    question: "How far is Sóller from Palma cruise port?",
     answer:
-      "Granada is about 125 km from Malaga. Coaches and private vehicles normally take 1 hour 30 minutes to 2 hours each way, depending on traffic and the final drop-off point.",
+      "Sóller sits in the northwest Tramuntana foothills. Road journeys commonly take around 30–45 minutes each way depending on traffic and routing; historic train itineraries take longer by design. Treat it as a proper half-day or full-day commitment.",
   },
   {
-    question: "Do I need advance tickets for the Alhambra?",
+    question: "Does every Sóller tour include the historic train?",
     answer:
-      "Yes. Nasrid Palaces entry is timed and can sell out weeks or months ahead. Do not travel from the ship expecting to buy suitable tickets at the gate.",
+      "No. Some excursions focus on villages and scenery by road; others build the day around train, tram and boat. Read the itinerary carefully before booking.",
   },
   {
-    question: "Can I visit Granada and Malaga city in one port day?",
+    question: "How far are the Caves of Drach from Palma?",
     answer:
-      "Only as a brief combination on a long call. A proper Alhambra visit already uses most of the day once transfers, timed entry and return margin are included. Do not sacrifice the ship buffer for a rushed city stop.",
+      "The caves are on Mallorca’s east coast near Porto Cristo. Expect a meaningful cross-island drive each way, so the outing suits a half-day or longer call with organised transport.",
   },
   {
-    question: "How far is Ronda from Malaga?",
+    question: "Is Valldemossa worth visiting on a cruise day?",
     answer:
-      "Ronda is roughly 100 km away. The drive commonly takes around 1 hour 30 minutes to 2 hours each way on winding inland roads. It suits a full-day excursion rather than casual independent travel.",
-  },
-  {
-    question: "Is Ronda or the Alhambra better for a first visit?",
-    answer:
-      "The Alhambra is Andalusia's great monument and our first-time choice when tickets and port hours align. Ronda offers stronger open-air scenery, fewer timed-entry constraints and a more flexible day.",
-  },
-  {
-    question: "Can cruise passengers visit Caminito del Rey safely?",
-    answer:
-      "Yes if they meet the operator's age, footwear, mobility and height-exposure requirements. The route is linear, entry is timed and closures can occur in bad weather, so organised logistics are strongly preferable on a port day.",
-  },
-  {
-    question: "How difficult is Caminito del Rey?",
-    answer:
-      "The maintained walkway is not technical climbing, but the outing involves several kilometres of walking, steps, exposed boardwalks and limited opportunities to turn back. It is unsuitable for significant mobility limitations or severe fear of heights.",
-  },
-  {
-    question: "What happens if Caminito del Rey closes because of weather?",
-    answer:
-      "Access can close in strong wind, heavy rain or unsafe conditions. Check the operator's cancellation and alternative-itinerary policy before booking; no website should promise that the route will always open.",
-  },
-  {
-    question: "Is Mijas a good choice for families?",
-    answer:
-      "Often, yes. Mijas Pueblo offers whitewashed streets and viewpoints with less road time than Granada or Ronda. Families may still prefer central Malaga if they need pushchair-friendly flexibility and an easy return.",
-  },
-  {
-    question: "What food should I try in Malaga?",
-    answer:
-      "Look for espetos de sardinas, fried fish, porra antequerana, aubergine with cane honey, local almonds and sweet Malaga wine. Atarazanas Market is useful for a compact introduction.",
-  },
-  {
-    question: "Can I combine a food tour with Malaga sightseeing?",
-    answer:
-      "Yes. A market or tapas tour can anchor a city day because most central landmarks are close together. Leave time for the Alcazaba before lunch and return along the waterfront afterwards.",
+      "Yes for passengers who want mountain-village character. It pairs naturally with Sóller on many itineraries. Expect cobbles, slopes and less time for shopping-list sightseeing in Palma itself.",
   },
   {
     question: "Should I book through the cruise line or independently?",
     answer:
-      "Ship excursions offer the clearest protection if an organised tour is delayed. Reputable independent operators may offer smaller groups and better value, but you must check their port-day experience, cancellation terms and return guarantee.",
+      "Ship excursions offer the clearest protection if an organised tour is delayed. Reputable independent operators may offer smaller groups or different itineraries, but you must check their port-day experience, cancellation terms and return arrangements.",
   },
   {
     question: "How much return-to-ship buffer should I allow?",
     answer:
-      "For Malaga city, aim to be at the terminal 60–90 minutes before all-aboard. For Granada, Ronda or Caminito del Rey, build the route backwards with additional motorway and access contingency.",
+      "For Palma city, aim to be at the terminal 60–90 minutes before all-aboard. For villages, caves or multi-transport island tours, build the route backwards with additional traffic contingency.",
   },
   {
-    question: "Are Malaga shore excursions accessible?",
+    question: "Are Palma shore excursions accessible?",
     answer:
-      "Central Malaga and the waterfront have accessible sections, but the Alcazaba includes slopes and uneven surfaces. Ronda has cobbles and gradients; the Alhambra is extensive; Caminito del Rey is not suitable for limited mobility. Discuss exact needs before booking.",
+      "Waterfront promenades can be relatively manageable, but old-town cobbles, cathedral approaches, village streets, cave pathways and cycling tours vary widely. Discuss exact mobility needs with the provider before booking.",
   },
   {
-    question: "What currency and language are used in Malaga?",
+    question: "What currency and language are used in Palma?",
     answer:
-      "Spain uses the euro. Spanish is the local language, and English is widely understood in major visitor areas. Cards are common, but carrying a small amount of cash is useful for markets and cafés.",
+      "Spain uses the euro. Catalan and Spanish are local languages, and English is widely understood in major visitor areas. Cards are common, but carrying a small amount of cash is useful for markets and cafés.",
+  },
+  {
+    question: "Is Mallorca the same place as Majorca?",
+    answer:
+      "Yes. Mallorca is the official spelling; Majorca is a traditional English form still used in many UK searches. They refer to the same Balearic island.",
+  },
+  {
+    question: "Can I combine Palma and the Caves of Drach in one day?",
+    answer:
+      "Only lightly on a long call. A proper cave visit already uses substantial road time. Do not sacrifice the ship buffer for a rushed cathedral stop afterwards.",
+  },
+  {
+    question: "What food should I try in Palma?",
+    answer:
+      "Look for market produce, ensaimadas, savoury Mallorcan snacks and fresh seafood. A short tasting walk or market visit often fits a cruise day better than a long lunch.",
   },
 ];
 

@@ -9,12 +9,17 @@ import { getComparisonImage } from "@/lib/images";
 
 const path = "/compare";
 const description =
-  "Honest comparisons for Malaga cruise passengers — Granada or Ronda, Ronda or Caminito del Rey, independent or guided, and the best Andalusia excursions for different travellers.";
+  "Honest comparisons for Palma cruise passengers — city or island, Sóller or caves, independent or guided, and the best Mallorca excursions for different travellers.";
 
 export const metadata = buildMetadata({
-  title: "Compare Andalusia Cruise Options from Malaga",
+  title: "Compare Palma Cruise Options",
   description,
   path,
+  keywords: [
+    "Palma shore excursion comparison",
+    "Mallorca cruise day choices",
+    "Sóller or Caves of Drach",
+  ],
 });
 
 const breadcrumbs = [
@@ -23,13 +28,18 @@ const breadcrumbs = [
 ];
 
 export default function CompareHubPage() {
-  const image = getComparisonImage("granada-or-ronda");
+  const image = getComparisonImage("which-palma-shore-excursion");
   return (
     <>
-      <JsonLd data={[breadcrumbSchema(breadcrumbs), webPageSchema({ title: "Compare Andalusia Cruise Options", description, path })]} />
+      <JsonLd
+        data={[
+          breadcrumbSchema(breadcrumbs),
+          webPageSchema({ title: "Compare Palma Cruise Options", description, path }),
+        ]}
+      />
       <PageHero
-        title="Compare Andalusia Cruise Options"
-        subtitle="Editorial comparisons to help you choose between Granada, Ronda, Caminito del Rey, Malaga, the coast and different touring styles."
+        title="Compare Palma Cruise Options"
+        subtitle="Editorial comparisons to help you choose between historic Palma, island villages, caves, scenic railways and different touring styles."
         image={image}
         compact
       />

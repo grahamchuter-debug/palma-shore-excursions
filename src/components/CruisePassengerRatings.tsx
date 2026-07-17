@@ -1,12 +1,12 @@
 const RATINGS = [
-  { label: "Walking Around Port", stars: 5 },
+  { label: "Walking Around Port", stars: 4 },
   { label: "History", stars: 5 },
   { label: "Food & Wine", stars: 5 },
   { label: "Scenery", stars: 5 },
   { label: "Photography", stars: 5 },
   { label: "Families", stars: 4 },
-  { label: "Independent Exploring", stars: 5 },
-  { label: "Adventure", stars: 5 },
+  { label: "Independent Exploring", stars: 4 },
+  { label: "Adventure", stars: 4 },
   { label: "Shopping", stars: 4 },
 ] as const;
 
@@ -26,11 +26,12 @@ export function CruisePassengerRatings() {
   return (
     <section className="section-padding bg-coastal-50 border-b border-coastal-100">
       <div className="container-wide max-w-4xl">
-        <p className="section-eyebrow">Malaga cruise port ratings</p>
-        <h2 className="section-title mt-2">How Malaga scores for cruise passengers</h2>
+        <p className="section-eyebrow">Palma cruise port ratings</p>
+        <h2 className="section-title mt-2">How Palma scores for cruise passengers</h2>
         <p className="section-subtitle">
-          Editorial ratings based on walkability, cultural depth, food culture, scenery and how well
-          the port suits independent explorers — not a review of any single tour operator.
+          Editorial ratings based on cultural depth, scenery, food culture and how well the port
+          supports both city days and wider Mallorca excursions — not a review of any single tour
+          operator.
         </p>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {RATINGS.map((r) => (

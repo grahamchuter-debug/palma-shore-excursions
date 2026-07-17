@@ -18,37 +18,38 @@ export function Footer() {
               <DestinationLogo variant="compact" tone="on-dark" decorative />
             </Link>
             <p className="mt-4 text-sm text-coastal-100/70 leading-relaxed">
-              Helping cruise passengers choose between Malaga, Granada, Ronda, Caminito del Rey and
-              the coast with honest independent advice for every day ashore.
+              Palma Shore Excursions helps cruise passengers compare ways to experience Palma and
+              Mallorca during their time in port.
             </p>
           </div>
           <div>
-            <h3 className="mb-3 text-sm font-medium text-white/90">Choose your Andalusia</h3>
+            <h3 className="mb-3 text-sm font-medium text-white/90">Explore Palma</h3>
             <ul className="space-y-1.5 text-sm text-coastal-100/70">
-              <li><Link href="/compare/granada-or-ronda" className="hover:text-white">Granada or Ronda?</Link></li>
-              <li><Link href="/compare/ronda-or-caminito-del-rey" className="hover:text-white">Ronda or Caminito?</Link></li>
-              <li><Link href="/compare/best-malaga-shore-excursion" className="hover:text-white">Best Malaga excursion</Link></li>
-              <li><Link href="/wow-collection" className="hover:text-white">The Wow Collection</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="mb-3 text-sm font-medium text-white/90">Plan your port day</h3>
-            <ul className="space-y-1.5 text-sm text-coastal-100/70">
-              <li><Link href="/cruise-planner" className="hover:text-white">Malaga Cruise Planner</Link></li>
               <li><Link href="/shore-excursions" className="hover:text-white">Shore Excursions</Link></li>
-              <li><Link href="/guides/granada-from-malaga-cruise-port" className="hover:text-white">Granada guide</Link></li>
-              <li><Link href="/guides/independent-malaga-guide" className="hover:text-white">Independent Malaga guide</Link></li>
-              <li><Link href="/cruise-port-guide" className="hover:text-white">Malaga Port Guide</Link></li>
+              <li><Link href="/palma-cruise-port" className="hover:text-white">Cruise Port Guide</Link></li>
+              <li><Link href="/things-to-do-in-palma-from-a-cruise-ship" className="hover:text-white">Things to Do</Link></li>
+              <li><Link href="/palma-cruise-ship-schedule" className="hover:text-white">Ship Schedule</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-3 text-sm font-medium text-white/90">Editor&apos;s Collection</h3>
+            <h3 className="mb-3 text-sm font-medium text-white/90">Plan Your Day</h3>
             <ul className="space-y-1.5 text-sm text-coastal-100/70">
-              <li><Link href="/shore-excursions/granada-alhambra-full-day" className="hover:text-white">Editor&apos;s Choice</Link></li>
+              <li><Link href="/shore-excursions/palma-old-town-cathedral" className="hover:text-white">Historic Palma</Link></li>
+              <li><Link href="/shore-excursions/soller-valldemossa" className="hover:text-white">Sóller and Valldemossa</Link></li>
+              <li><Link href="/shore-excursions/caves-of-drach" className="hover:text-white">Caves and Coast</Link></li>
+              <li><Link href="/shore-excursions/private-soller-valldemossa" className="hover:text-white">Private Tours</Link></li>
+              <li><Link href="/compare/which-palma-shore-excursion" className="hover:text-white">Compare Excursions</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="mb-3 text-sm font-medium text-white/90">About</h3>
+            <ul className="space-y-1.5 text-sm text-coastal-100/70">
+              <li><Link href="/about" className="hover:text-white">How We Select Excursions</Link></li>
+              <li><Link href="/affiliate-disclosure" className="hover:text-white">Affiliate Disclosure</Link></li>
+              <li><Link href="/enquire" className="hover:text-white">Contact</Link></li>
+              <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>
+              <li><Link href="/terms" className="hover:text-white">Terms</Link></li>
               <li><Link href={SIGNATURE_EXPERIENCE_PATH} className="hover:text-white">Signature Experience</Link></li>
-              <li><Link href="/compare/best-andalusia-tour-first-time" className="hover:text-white">First-timers</Link></li>
-              <li><Link href="/compare/private-tour-vs-coach-tour" className="hover:text-white">Private vs coach</Link></li>
-              <li><Link href="/enquire" className="hover:text-white">Enquire</Link></li>
             </ul>
           </div>
         </div>
@@ -62,7 +63,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-coastal-300/75">
-        &copy; {year} {SITE.name}. Independent Andalusia cruise planning resource — not affiliated with any cruise line or the Port of Malaga.
+        &copy; {year} {SITE.name}. Independent cruise excursion guide — not affiliated with the Port of
+        Palma, any cruise line or any government tourism authority.
       </div>
     </footer>
   );

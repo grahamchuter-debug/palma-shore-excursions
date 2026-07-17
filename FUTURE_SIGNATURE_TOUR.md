@@ -1,142 +1,60 @@
-# Signature Andalusia Experience — Internal Planning
+# Signature Mallorca Experience — Internal Planning
 
-**Working title:** Signature Andalusia Discovery  
-**Status:** In preparation only — not a live or bookable product  
-**Public placeholder:** `/signature-andalusia-experience`  
-**Editorial rule:** Never imply that the experience, inclusions, price or departure dates are confirmed.
+**Working title:** Signature Mallorca Discovery  
+**Status:** Concept in preparation — not bookable  
+**Intended path:** `/signature-mallorca-experience`
 
-## Product idea
+## Purpose
 
-Create a premium, Ronda-focused shore experience from Malaga for no more than eight guests. The day should combine the drama of Ronda with carefully selected white-village or landscape stops, rather than trying to cover every major Andalusian destination.
+Create a premium, Tramuntana-focused shore experience from Palma for no more than eight guests. The day should combine Valldemossa and Sóller with carefully selected mountain scenery, rather than trying to cover every major Mallorca highlight.
 
-The concept is intentionally different from a standard coach tour:
+## Positioning
 
-- maximum eight guests
-- luxury Mercedes or equivalent vehicle
-- cruise-terminal collection and return
-- Ronda as the clear anchor
-- scenic village and mountain photography stops
-- a relaxed local lunch
-- itinerary flexibility within a conservative ship schedule
-- an excellent English-speaking local guide
+- Small-group alternative to large coach circuits
+- Cruise-timed routing from Palma de Mallorca
+- Village time that breathes, not a checklist day
+- Clear return-to-ship discipline
 
-Until suppliers, route testing and commercial terms are complete, all public copy must use language such as “in preparation”, “planned” and “future”.
+## Ideal guest
 
-## Intended passenger
+- First-time or return Palma cruise passenger seeking Mallorca beyond the capital
+- Comfortable with moderate village walking
+- Preferring a quieter vehicle and flexible pacing
 
-- First-time or repeat Malaga cruise passenger seeking inland Andalusia
-- Values scenery, local context, food and photography over a checklist
-- Wants a smaller group than a conventional coach excursion
-- Comfortable with a full road day and some walking on cobbles and gradients
-- Premium or mid-premium budget
+## Not ideal for
 
-This is not intended for passengers whose priority is the Alhambra, anyone needing step-free access throughout, or calls without enough road and return margin.
+Passengers whose priority is a short city-only call, anyone needing step-free access throughout, or calls without enough road and return margin.
 
-## Indicative route
+## Draft day shape
 
-The final sequence must be tested against real ship calls. A possible long-call structure:
+1. **Palma terminal collection** — named meeting point and direct day-of contact
+2. **Tramuntana approach** — scenic transfer with orientation
+3. **Valldemossa** — hillside lanes and mountain setting before peak congestion
+4. **Scenic link** to the Sóller valley
+5. **Sóller free time** — square, citrus valley character, optional café stop
+6. **Local lunch** when included in the eventual product design
+7. **Flexible viewpoint or short add-on** only when margins remain generous
+8. **Direct return to Palma** — timed backwards from all-aboard with documented contingency
 
-1. **Malaga terminal collection** — named meeting point and direct day-of contact
-2. **Scenic drive inland** — guide introduction and comfort stop where needed
-3. **Ronda viewpoints** — Puente Nuevo and the Tajo gorge before peak congestion
-4. **Old-town discovery** — history, lanes and a manageable walking route
-5. **Local lunch** — pre-vetted restaurant with dietary arrangements
-6. **Village or landscape stop** — one meaningful stop selected for route conditions, not several rushed ones
-7. **Photography stop** — mountain, gorge or white-village viewpoint
-8. **Direct return to Malaga** — timed backwards from all-aboard with a documented contingency
+Omit any stop that weakens the village experience or erodes the return buffer.
 
-The launch itinerary should omit any stop that weakens the Ronda experience or erodes the return buffer.
+## Partner criteria (when selecting)
 
-## Experience standards
+- Strong Tramuntana and Mallorca knowledge
+- Proven Palma cruise-port experience
+- Maximum eight guests
+- Transparent inclusions (entrances, lunch, meeting point)
 
-### Group and vehicle
+## Launch gates
 
-- Hard cap of eight paying guests
-- Modern, air-conditioned premium vehicle
-- Passenger and luggage capacity checked at full group size
-- Seat allocation and child-seat policy confirmed before sale
+- Documented reverse-timing from all-aboard
+- Traffic contingency for mountain roads
+- Clear accessibility notes
+- Editorial review against existing Editor’s Choice and Wow Collection principles
 
-### Guide
+## Related public pages
 
-- Fluent, natural English
-- Strong Ronda and Andalusia knowledge
-- Comfortable adapting commentary to the group
-- Proven Malaga cruise-port experience
-- Clear, calm communication when traffic or weather changes the route
-
-### Food
-
-- Lunch venue tested for quality, service time and group handling
-- Vegetarian and common dietary requirements supported with notice
-- Lunch must feel local without becoming a timing risk
-- No unconfirmed meal inclusion or sample menu in public sales copy
-
-### Cruise timing
-
-- Route planned from all-aboard, not ship departure
-- Separate timing models for eight-, nine-, ten- and eleven-hour calls
-- Traffic contingency for Malaga access and mountain roads
-- Named fallback route when an incident makes the full plan unsafe
-- Day-of ship and berth monitoring assigned to the operating partner
-
-## Partner requirements
-
-Before launch, the partner must provide:
-
-- licences, insurance and vehicle documentation
-- written cancellation and missed-port terms
-- emergency and breakdown procedures
-- guide and driver quality standards
-- child-seat and accessibility policies
-- restaurant arrangements and dietary process
-- clear commission, payment and refund terms
-- evidence of reliable cruise-passenger returns
-
-## Validation plan
-
-1. Run the complete route privately under realistic weekday conditions.
-2. Repeat during a busy cruise or holiday period.
-3. Record drive, parking, walking, lunch and comfort-stop timings.
-4. Test the route with eight occupied passenger seats.
-5. Review walking demands and the accuracy of accessibility copy.
-6. Photograph only what a normal departure can reliably deliver.
-7. Obtain structured feedback from trial guests.
-8. Launch only when the editorial and operations teams approve the return margins.
-
-## Commercial launch gates
-
-- Sustained interest from relevant Malaga cruise passengers
-- Signed agreement with an approved local partner
-- Tested route and documented fallback itinerary
-- Confirmed price, inclusions and minimum operating numbers
-- Booking, payment, cancellation and customer-support flow complete
-- Accurate photography and final editorial review
-
-## Website state before launch
-
-- `comingSoon` remains `true`
-- Placeholder page contains no booking button or invented price
-- Editor's Collection card says the concept is in preparation
-- Wow Collection lists future products only
-- Current bookable alternatives remain clearly separate
-
-## Launch checklist
-
-- [ ] Approve final product name
-- [ ] Sign operating partner
-- [ ] Complete route tests
-- [ ] Confirm maximum group size and vehicle
-- [ ] Confirm lunch and dietary arrangements
-- [ ] Approve timings by port-call length
-- [ ] Publish terms, price and cancellation policy
-- [ ] Replace concept photography with verified product imagery
-- [ ] Set `comingSoon: false` only after bookings can be fulfilled
-- [ ] Update all editorial and Wow Collection references
-
-## Explicit non-goals
-
-- Do not combine Ronda and the Alhambra in one cruise day.
-- Do not add villages merely to increase the attraction count.
-- Do not market a “guaranteed return” without a contractually supported policy.
-- Do not publish a launch date until operations and booking are ready.
-- Do not describe proposed lunch, vehicle or stops as included before confirmation.
+- `/signature-mallorca-experience`
+- `/wow-collection`
+- `/shore-excursions/soller-valldemossa`
+- `/compare/which-palma-shore-excursion`

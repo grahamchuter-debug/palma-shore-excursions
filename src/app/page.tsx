@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
-import { ChooseYourAndalusia } from "@/components/ChooseYourAndalusia";
-import { SpiritOfAndalusia } from "@/components/SpiritOfAndalusia";
+import { ChooseYourMallorca } from "@/components/ChooseYourMallorca";
+import { SpiritOfMallorca } from "@/components/SpiritOfMallorca";
 import { WowCollectionFeature } from "@/components/WowCollectionFeature";
-import { SignatureAndalusiaFeature } from "@/components/SignatureAndalusiaFeature";
+import { SignatureMallorcaFeature } from "@/components/SignatureMallorcaFeature";
 import { EditorsCollection } from "@/components/EditorsCollection";
 import { HonestAdvice } from "@/components/HonestAdvice";
 import { ExperienceSelector } from "@/components/ExperienceSelector";
@@ -11,37 +11,42 @@ import { CruisePassengerRatings } from "@/components/CruisePassengerRatings";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, faqSchema, travelGuideSchema } from "@/lib/schema";
-import { coreSections, getHomepageFaqs, homepageTagline } from "@/data/homepage";
-import { getFeaturedExcursions } from "@/data/excursions";
+import { coreSections, getHomepageFaqs } from "@/data/homepage";
+import { getExcursionBySlug, getFeaturedExcursions } from "@/data/excursions";
 import { siteImages, getExcursionImage } from "@/lib/images";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { PreloadImage } from "@/components/PreloadImage";
-import { AndalusiaLinks } from "@/components/AndalusiaLinks";
+import { MallorcaLinks } from "@/components/MallorcaLinks";
 import { CruiseHeroTrust } from "@/components/CruiseHeroTrust";
 import { YourDayAshore } from "@/components/YourDayAshore";
 import { SITE } from "@/lib/site";
+import {
+  whichPalmaShoreExcursionRows,
+  whichPalmaShoreExcursionPrompts,
+} from "@/data/comparison-table";
 
 export const metadata = buildMetadata({
-  title: "Malaga — Gateway to Andalusia | Shore Excursions",
+  title: "Palma Shore Excursions | Mallorca Cruise Tours",
   description:
-    "Explore carefully selected Malaga shore excursions, independent cruise advice and unforgettable Andalusian experiences.",
+    "Discover the best Palma shore excursions for cruise passengers, from Palma Cathedral and Valldemossa to Sóller, the Tramuntana Mountains and Mallorca’s famous caves.",
   path: "/",
   keywords: [
-    "Gateway to Andalusia",
-    "Malaga cruise port",
-    "Malaga shore excursions",
-    "Alhambra from Malaga",
-    "Ronda shore excursion",
-    "Caminito del Rey cruise excursion",
+    "Palma shore excursions",
+    "Palma de Mallorca shore excursions",
+    "Mallorca shore excursions",
+    "Majorca shore excursions",
+    "Palma cruise excursions",
+    "Palma cruise port tours",
   ],
 });
 
 const SITE_DESCRIPTION =
-  "The gateway to Andalusia — carefully selected Malaga shore excursions, independent cruise advice and unforgettable experiences across Granada, Ronda, Caminito del Rey and the Costa del Sol for your day ashore.";
+  "Find the best version of your day ashore in Palma de Mallorca — carefully selected shore excursions, independent cruise advice and experiences across the cathedral city, Sóller, Valldemossa, caves and the Tramuntana Mountains.";
 
 export default function HomePage() {
   const faqs = getHomepageFaqs();
-  const featured = getFeaturedExcursions().slice(0, 3);
+  const featured = getFeaturedExcursions().slice(0, 4);
+  const editorsChoice = getExcursionBySlug("soller-valldemossa");
 
   return (
     <>
@@ -50,7 +55,7 @@ export default function HomePage() {
           breadcrumbSchema([{ name: "Home", path: "/" }]),
           faqSchema(faqs),
           travelGuideSchema({
-            title: "Malaga — Gateway to Andalusia",
+            title: "Palma Shore Excursions",
             description: SITE_DESCRIPTION,
             path: "/",
           }),
@@ -59,7 +64,6 @@ export default function HomePage() {
 
       <PreloadImage base={siteImages.hero.base} role="hero" />
 
-      {/* Hero — Gateway positioning */}
       <section className="home-hero">
         <ResponsiveImage
           image={siteImages.hero}
@@ -70,50 +74,83 @@ export default function HomePage() {
         />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="container-wide relative z-10 px-4 sm:px-6 lg:px-8">
-          <p className="section-eyebrow mb-2 text-coastal-100 animate-fade-up">Gateway to Andalusia</p>
-          <h1 className="home-hero-heading animate-fade-up-delay">{homepageTagline}</h1>
+          <p className="section-eyebrow mb-2 text-coastal-100 animate-fade-up">
+            Palma de Mallorca for Cruise Passengers
+          </p>
+          <h1 className="home-hero-heading animate-fade-up-delay">Palma Shore Excursions</h1>
           <CruiseHeroTrust />
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg animate-fade-up-delay">
-            Explore carefully selected Malaga shore excursions, independent cruise advice and
-            unforgettable Andalusian experiences — planned around your time in port.
+            Discover Palma’s historic heart, Mallorca’s mountain villages, scenic railways, caves and
+            coastlines — all selected with your time in port in mind.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 animate-fade-up-delay-2">
             <Link href="/shore-excursions" className="btn-accent">
               Explore Shore Excursions
             </Link>
             <Link
-              href="/compare"
+              href="/palma-cruise-port"
               className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20"
             >
-              Help Me Choose My Andalusian Adventure
+              Plan Your Day in Palma
             </Link>
           </div>
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 animate-fade-up-delay-2">
-            <span className="inline-flex items-center gap-2">
-              <span aria-hidden="true">🥾</span> Caminito
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span aria-hidden="true">🏰</span> Alhambra
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span aria-hidden="true">🌉</span> Ronda
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span aria-hidden="true">🎨</span> Malaga
-            </span>
-          </div>
+          <p className="mt-6 text-sm text-white/80 animate-fade-up-delay-2">
+            Cruise-focused experiences • Clear durations • Easy comparison
+          </p>
         </div>
       </section>
 
       <YourDayAshore />
-      <ChooseYourAndalusia />
-      <SpiritOfAndalusia />
+      <ChooseYourMallorca />
+      <SpiritOfMallorca />
       <WowCollectionFeature />
-      <SignatureAndalusiaFeature />
+      <SignatureMallorcaFeature />
+
+      {editorsChoice && (
+        <section className="section-padding bg-gradient-to-b from-amber-50/50 via-white to-white border-b border-amber-100/70">
+          <div className="container-wide">
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+                <ResponsiveImage
+                  image={getExcursionImage(editorsChoice.slug)}
+                  role="card"
+                  imgClassName="h-full w-full object-cover"
+                />
+                <span className="absolute left-4 top-4 badge-editors-choice">⭐ Editor&apos;s Choice</span>
+              </div>
+              <div>
+                <p className="section-eyebrow">Editorial pick</p>
+                <h2 className="section-title mt-2">Our Pick for a Classic Mallorca Day</h2>
+                <p className="mt-4 text-base leading-relaxed text-gray-700">
+                  For first-time visitors who want to see Mallorca beyond the capital, Sóller and
+                  Valldemossa provide one of the island’s most rewarding combinations of mountain
+                  scenery, historic villages and Mediterranean character.
+                </p>
+                <div className="mt-6 card-feature">
+                  <h3 className="font-display text-lg font-bold text-gray-900">Why we chose it</h3>
+                  <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                    <li>A strong introduction to Mallorca beyond Palma</li>
+                    <li>Combines scenery, culture and traditional villages</li>
+                    <li>Well suited to visitors with one day on the island</li>
+                  </ul>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href={`/shore-excursions/${editorsChoice.slug}`} className="btn-accent">
+                    View Excursion
+                  </Link>
+                  <Link href="/compare/which-palma-shore-excursion" className="btn-secondary">
+                    Compare options
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <EditorsCollection />
       <HonestAdvice />
 
-      {/* Featured excursions */}
       <section className="section-padding bg-coastal-900 text-white">
         <div className="container-wide">
           <div className="max-w-2xl">
@@ -122,15 +159,14 @@ export default function HomePage() {
               Featured shore excursions
             </h2>
             <p className="mt-4 text-base leading-relaxed text-white/80 sm:text-lg">
-              Once you know which experience suits your day ashore, these cruise-timed tours are
-              designed for passengers who already understand which Andalusian experience fits their
-              port call.
+              Once you know which experience suits your day ashore, these cruise-focused tours help you
+              compare Palma city days with wider Mallorca adventures.
             </p>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((e) => {
               const image = getExcursionImage(e.slug);
-              const isEditorsChoice = e.slug === "granada-alhambra-full-day";
+              const isEditorsChoice = e.slug === "soller-valldemossa";
               return (
                 <Link
                   key={e.slug}
@@ -152,12 +188,18 @@ export default function HomePage() {
                         ⭐ Editor&apos;s Choice
                       </span>
                     )}
+                    {e.badge && !isEditorsChoice && (
+                      <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-coastal-900">
+                        {e.badge}
+                      </span>
+                    )}
                   </div>
                   <div className="p-6 text-white">
                     <h3 className="font-display text-lg font-bold group-hover:text-maple-300">{e.title}</h3>
                     <p className="mt-2 text-sm text-white/70">{e.tagline}</p>
+                    <p className="mt-2 text-xs text-white/55">{e.duration}</p>
                     <span className="mt-4 inline-block text-sm font-semibold text-maple-300">
-                      Discover more →
+                      View Excursion →
                     </span>
                   </div>
                 </Link>
@@ -169,74 +211,111 @@ export default function HomePage() {
               All Shore Excursions
             </Link>
           </div>
+          <p className="mt-6 max-w-2xl text-sm text-white/60">
+            Some excursion links lead to trusted booking partners. We may earn a commission when you
+            make a booking, at no additional cost to you.
+          </p>
         </div>
       </section>
 
       <ExperienceSelector />
 
+      <section className="section-padding bg-white border-b border-coastal-100">
+        <div className="container-wide">
+          <p className="section-eyebrow">Decision support</p>
+          <h2 className="section-title mt-2">Which Palma Shore Excursion Is Right for You?</h2>
+          <p className="section-subtitle">
+            Compare city, scenic, cave and private options using verified durations and activity levels.
+          </p>
+
+          <div className="mt-8 hidden overflow-x-auto lg:block">
+            <table className="min-w-full border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-coastal-200 text-xs uppercase tracking-wide text-coastal-700">
+                  <th className="py-3 pr-4 font-semibold">Experience</th>
+                  <th className="py-3 pr-4 font-semibold">Best for</th>
+                  <th className="py-3 pr-4 font-semibold">Duration</th>
+                  <th className="py-3 pr-4 font-semibold">Activity</th>
+                  <th className="py-3 pr-4 font-semibold">Stays in Palma?</th>
+                  <th className="py-3 pr-4 font-semibold">Private or shared</th>
+                  <th className="py-3 font-semibold">Key highlight</th>
+                </tr>
+              </thead>
+              <tbody>
+                {whichPalmaShoreExcursionRows.map((row) => (
+                  <tr key={row.experience} className="border-b border-coastal-100 align-top">
+                    <td className="py-4 pr-4">
+                      <Link href={row.href} className="font-semibold text-coastal-800 hover:text-maple-600">
+                        {row.experience}
+                      </Link>
+                    </td>
+                    <td className="py-4 pr-4 text-gray-700">{row.bestFor}</td>
+                    <td className="py-4 pr-4 text-gray-700">{row.approximateDuration}</td>
+                    <td className="py-4 pr-4 text-gray-700">{row.activityLevel}</td>
+                    <td className="py-4 pr-4 text-gray-700">{row.staysInPalma}</td>
+                    <td className="py-4 pr-4 text-gray-700">{row.privateOrShared}</td>
+                    <td className="py-4 text-gray-700">{row.keyHighlight}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:hidden">
+            {whichPalmaShoreExcursionRows.map((row) => (
+              <Link key={row.experience} href={row.href} className="card-feature block">
+                <h3 className="font-display text-lg font-bold text-gray-900">{row.experience}</h3>
+                <dl className="mt-3 space-y-1.5 text-sm text-gray-700">
+                  <div><dt className="inline font-semibold">Best for: </dt><dd className="inline">{row.bestFor}</dd></div>
+                  <div><dt className="inline font-semibold">Duration: </dt><dd className="inline">{row.approximateDuration}</dd></div>
+                  <div><dt className="inline font-semibold">Activity: </dt><dd className="inline">{row.activityLevel}</dd></div>
+                  <div><dt className="inline font-semibold">Stays in Palma?: </dt><dd className="inline">{row.staysInPalma}</dd></div>
+                  <div><dt className="inline font-semibold">Format: </dt><dd className="inline">{row.privateOrShared}</dd></div>
+                  <div><dt className="inline font-semibold">Highlight: </dt><dd className="inline">{row.keyHighlight}</dd></div>
+                </dl>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {whichPalmaShoreExcursionPrompts.map((prompt) => (
+              <div key={prompt.title} className="card-feature">
+                <h3 className="font-display text-base font-bold text-gray-900">{prompt.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{prompt.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CruisePassengerRatings />
 
-      {/* Independent Malaga guide teaser */}
       <section className="section-padding bg-white">
         <div className="container-wide max-w-4xl">
           <div className="card-accent">
             <p className="section-eyebrow">Independent exploring</p>
-            <h2 className="section-title mt-2">Can you explore Malaga without a tour?</h2>
+            <h2 className="section-title mt-2">Can you explore Palma without a tour?</h2>
             <p className="mt-4 text-gray-700 leading-relaxed">
-              Yes. Malaga&apos;s Old Town, cathedral, Alcazaba, Picasso Museum, Atarazanas Market,
-              Muelle Uno and Malagueta Beach can all fit a sensible independent day ashore. Our guide
-              explains the walk from the terminal, practical sequencing and how to get back on board
-              with a sensible return buffer.
+              Often yes. Palma’s cathedral, old town, Parc de la Mar and markets can fill a sensible
+              independent day when berth and shuttle arrangements are clear. Island days to Sóller,
+              Valldemossa or the caves usually benefit from organised logistics.
             </p>
-            <Link href="/guides/independent-malaga-guide" className="btn-secondary mt-6 inline-flex text-sm">
-              Read the independent Malaga guide →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison guides */}
-      <section className="section-padding bg-coastal-50">
-        <div className="container-wide grid gap-6 lg:grid-cols-2">
-          <div className="card-feature">
-            <h3 className="font-display text-xl font-bold text-gray-900">Granada or Ronda?</h3>
-            <p className="mt-3 text-gray-700">
-              Moorish palace architecture versus dramatic mountain scenery — compare road time,
-              ticketing, walking and flexibility before choosing.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link href="/compare/granada-or-ronda" className="btn-secondary text-sm">
-                Compare options
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/guides/independent-palma-guide" className="btn-secondary text-sm">
+                Independent Palma guide →
               </Link>
-              <Link href="/compare/best-malaga-shore-excursion" className="btn-secondary text-sm">
-                Best excursion guide
-              </Link>
-            </div>
-          </div>
-          <div className="card-accent">
-            <h3 className="font-display text-xl font-bold text-gray-900">Private tour or large coach?</h3>
-            <p className="mt-3 text-gray-700">
-              Prefer exclusive small-group pacing? Compare private touring with standard coach
-              excursions — and see how The Wow Collection is being prepared for passengers who want
-              Andalusia experienced thoughtfully.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link href="/compare/private-tour-vs-coach-tour" className="btn-secondary text-sm">
-                Private vs coach
-              </Link>
-              <Link href="/wow-collection" className="btn-secondary text-sm">
-                The Wow Collection
+              <Link href="/things-to-do-in-palma-from-a-cruise-ship" className="btn-secondary text-sm">
+                Things to do from a cruise ship →
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Planning hub */}
       <section className="section-padding bg-white">
         <div className="container-wide">
           <p className="section-eyebrow">Plan your day ashore</p>
-          <h2 className="section-title mt-2">Everything you need to choose the right Andalusia experience</h2>
+          <h2 className="section-title mt-2">Everything you need to choose the right Mallorca experience</h2>
           <p className="section-subtitle">
             Not just an excursion catalogue — comparisons, guides, schedules and honest cruise-day
             planning advice, because the best bookings start with genuine understanding.
@@ -256,48 +335,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Cruise schedule teaser */}
       <section className="section-padding bg-coastal-900 text-white">
         <div className="container-wide max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            See which ships call at Malaga
+            See which ships call at Palma
           </h2>
           <p className="mt-4 text-white/85">
-            Check published ship schedules before you book Granada, Ronda or Caminito del Rey. Times
-            are indicative — always confirm your own port call with your cruise line before you go
-            ashore.
+            Check published ship schedules before you book a long island day. Times are indicative —
+            always confirm your own port call with your cruise line before you go ashore.
           </p>
-          <Link href="/ship-schedules/malaga" className="btn-accent mt-8 inline-flex">
-            View Malaga ship schedules
+          <Link href="/palma-cruise-ship-schedule" className="btn-accent mt-8 inline-flex">
+            View Palma cruise arrivals
           </Link>
         </div>
       </section>
 
       <section className="section-padding bg-white">
         <div className="container-wide max-w-4xl">
-          <FAQSection faqs={faqs} title="Malaga & Andalusia — FAQs" />
+          <FAQSection faqs={faqs} title="Palma Shore Excursions — FAQs" />
         </div>
       </section>
 
-      <AndalusiaLinks />
+      <MallorcaLinks />
 
-      {/* Trust */}
       <section className="section-padding bg-coastal-50 border-t border-coastal-100">
         <div className="container-wide max-w-3xl text-center">
           <p className="section-eyebrow">Why trust us</p>
           <h2 className="section-title mt-2">Independent editorial advice</h2>
           <p className="mt-4 text-gray-700 leading-relaxed">
-            {SITE.name} is an independent planning resource — not affiliated with any cruise line or the
-            Port of Malaga. We recommend honestly, build return-to-ship buffers into every guide, and
-            never imply a product exists before it is ready to book.
+            {SITE.name} is an independent cruise excursion guide — not affiliated with the Port of
+            Palma, any cruise line or any government tourism authority. We recommend honestly, favour
+            clear durations and never imply a product exists before it is ready to book.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-gray-600">
-            <span className="pill">Cruise-focused planning</span>
-            <span className="pill">Carefully selected excursions</span>
-            <span className="pill">Honest recommendations</span>
-            <span className="pill">Independent advice</span>
-            <span className="pill">Local expertise</span>
-            <span className="pill">Secure booking partners</span>
+            <span className="pill">Selected for Cruise Passengers</span>
+            <span className="pill">Clear Tour Durations</span>
+            <span className="pill">Experiences Across Palma and Mallorca</span>
+            <span className="pill">Compare City, Scenic and Private Tours</span>
+            <span className="pill">Secure Booking Through Established Tour Partners</span>
           </div>
         </div>
       </section>

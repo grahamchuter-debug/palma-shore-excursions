@@ -3,11 +3,11 @@ export const WOW_COLLECTION_PATH = "/wow-collection";
 export const wowCollection = {
   slug: "wow-collection",
   title: "The Wow Collection",
-  seoTitle: "The Wow Collection — Future Exclusive Andalusia Shore Excursions",
+  seoTitle: "The Wow Collection — Future Exclusive Mallorca Shore Excursions",
   metaDescription:
-    "Preview the Wow Collection: future exclusive small-group Andalusia experiences from Malaga, designed specifically for cruise passengers. In preparation.",
+    "Preview the Wow Collection: future exclusive small-group Mallorca experiences from Palma, designed specifically for cruise passengers. In preparation.",
   tagline:
-    "A future collection of distinctive, small-group Andalusia experiences designed from scratch for Malaga cruise passengers.",
+    "A future collection of distinctive, small-group Mallorca experiences designed from scratch for Palma cruise passengers.",
   overview:
     "The Wow Collection is a brand within our brand, not a list of ordinary tours with a new badge. Every future product must earn its place through exceptional scenery or access, thoughtful local partnerships, small-group pacing and conservative ship timing. The collection is currently in preparation; none of the planned experiences below should be treated as available or bookable.",
   comingSoon: true,
@@ -15,51 +15,57 @@ export const wowCollection = {
     {
       emoji: "✨",
       title: "A genuine wow moment",
-      description: "Each itinerary needs a defining place or encounter worth building the day around, not a longer checklist.",
+      description:
+        "Each itinerary needs a defining place or encounter worth building the day around, not a longer checklist.",
     },
     {
       emoji: "👥",
       title: "Small groups by design",
-      description: "Proposed group sizes remain deliberately small so stops, pacing and guide attention feel personal.",
+      description:
+        "Proposed group sizes remain deliberately small so stops, pacing and guide attention feel personal.",
     },
     {
       emoji: "🛠️",
       title: "Created from scratch",
-      description: "Products must be built for Malaga cruise calls rather than adapted from generic Costa del Sol day tours.",
+      description:
+        "Products must be built for Palma cruise calls rather than adapted from generic Mallorca holiday tours.",
     },
     {
       emoji: "🤝",
       title: "Trusted local partners",
-      description: "Guides, drivers, restaurants and activity partners must meet clear quality and communication standards.",
+      description:
+        "Guides, drivers, restaurants and activity partners must meet clear quality and communication standards.",
     },
     {
       emoji: "🚢",
       title: "Ship timing comes first",
-      description: "Every route must be planned backwards from all-aboard with traffic, access and weather contingencies.",
+      description:
+        "Every route must be planned backwards from all-aboard with traffic, access and weather contingencies.",
     },
     {
       emoji: "🗣️",
       title: "Honest editorial standards",
-      description: "We will state physical demands, limitations and trade-offs clearly, even when that means recommending another day.",
+      description:
+        "We will state physical demands, limitations and trade-offs clearly, even when that means recommending another day.",
     },
   ],
   plannedExperiences: [
     {
-      title: "Exclusive Ronda",
+      title: "Exclusive Tramuntana Villages",
       description:
-        "A future intimate Ronda day with Puente Nuevo, gorge viewpoints, old-town context, photography time and a local lunch.",
+        "A future intimate Valldemossa and Sóller day with mountain viewpoints, unhurried village time and a local lunch.",
       status: "in-preparation",
     },
     {
-      title: "Exclusive Caminito",
+      title: "Exclusive Railway Journey",
       description:
-        "A future tightly managed Caminito del Rey experience with advance access, suitable transport and transparent fitness guidance.",
+        "A future tightly managed train, tram and coastal experience with transparent timing guidance for cruise passengers.",
       status: "in-preparation",
     },
     {
-      title: "Private Andalusia Discovery",
+      title: "Private Mallorca Discovery",
       description:
-        "A future private journey shaped around Ronda, white villages, local food and the interests of one travelling party.",
+        "A future private journey shaped around villages, coast, caves or food — designed around one travelling party.",
       status: "in-preparation",
     },
   ],

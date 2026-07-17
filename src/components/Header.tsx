@@ -6,12 +6,11 @@ import { DestinationLogo } from "@/components/DestinationLogo";
 import { destinationIdentity } from "@/data/destination-identity";
 
 const navItems = [
-  { href: "/compare", label: "Compare" },
-  { href: "/shore-excursions", label: "Excursions" },
-  { href: "/guides", label: "Guides" },
-  { href: "/wow-collection", label: "Wow Collection" },
-  { href: "/cruise-planner", label: "Planner" },
-  { href: "/cruise-port-guide", label: "Port Guide" },
+  { href: "/shore-excursions", label: "Shore Excursions" },
+  { href: "/palma-cruise-port", label: "Cruise Port Guide" },
+  { href: "/palma-cruise-ship-schedule", label: "Ship Schedule" },
+  { href: "/things-to-do-in-palma-from-a-cruise-ship", label: "Things to Do" },
+  { href: "/faq", label: "FAQs" },
 ];
 
 export function Header() {
@@ -24,11 +23,9 @@ export function Header() {
           className="group min-w-0 shrink rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-500 focus-visible:ring-offset-2"
           aria-label={`${destinationIdentity.accessibleName} — home`}
         >
-          {/* Desktop / large tablet: full wordmark with strapline */}
           <span className="hidden lg:inline-flex">
             <DestinationLogo variant="full" decorative />
           </span>
-          {/* Compact tablet / mobile: destination + descriptor only */}
           <span className="inline-flex lg:hidden">
             <DestinationLogo variant="compact" decorative />
           </span>
@@ -45,8 +42,8 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden xl:block shrink-0">
-          <Link href="/enquire" className="btn-accent text-sm">
-            Enquire
+          <Link href="/shore-excursions" className="btn-accent text-sm py-2.5 px-4">
+            Explore Excursions
           </Link>
         </div>
         <button
@@ -79,11 +76,11 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/enquire"
+              href="/shore-excursions"
               className="rounded-lg px-4 py-3 text-sm font-semibold text-maple-600 hover:bg-coastal-50"
               onClick={() => setOpen(false)}
             >
-              Enquire
+              Explore Excursions
             </Link>
           </div>
         </nav>

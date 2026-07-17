@@ -1,14 +1,14 @@
-# Malaga Shore Excursions
+# Palma Shore Excursions
 
-World 2.0 editorial cruise planning site for malagashoreexcursions.com.
+World 2.0 editorial cruise planning site for palmashoreexcursions.com.
 
 ## Positioning
 
-Gateway to Andalusia / Where Southern Spain Begins
+Your Mediterranean Island Day
 
-## Destination identity (World 2.0 prototype)
+## Destination identity (World 2.0)
 
-Málaga is the **prototype** for the future network-wide destination logo system.
+Uses the shared destination logo system (Málaga was the original prototype).
 
 - Config: `src/data/destination-identity.ts`
 - Component: `src/components/DestinationLogo.tsx`
@@ -20,8 +20,11 @@ Future destinations should reuse the same component with destination/descriptor/
 ## Key paths
 
 - Homepage: `src/app/page.tsx`
-- World 2.0 components: `ChooseYourAndalusia.tsx`, `SpiritOfAndalusia.tsx`, `HonestAdvice.tsx`, `EditorsCollection.tsx`, `WowCollectionFeature.tsx`, `SignatureAndalusiaFeature.tsx`, `CruisePassengerRatings.tsx`, `CruiseHeroTrust.tsx`, `YourDayAshore.tsx`, `DestinationLogo.tsx`
-- Signature placeholder: `/signature-andalusia-experience`
+- World 2.0 components: `ChooseYourMallorca.tsx`, `SpiritOfMallorca.tsx`, `HonestAdvice.tsx`, `EditorsCollection.tsx`, `WowCollectionFeature.tsx`, `SignatureMallorcaFeature.tsx`, `CruisePassengerRatings.tsx`, `CruiseHeroTrust.tsx`, `YourDayAshore.tsx`, `DestinationLogo.tsx`
+- Signature placeholder: `/signature-mallorca-experience`
+- Port guide (primary SEO): `/palma-cruise-port`
+- Things to do: `/things-to-do-in-palma-from-a-cruise-ship`
+- Schedule hub: `/palma-cruise-ship-schedule`
 - Internal planning: `FUTURE_SIGNATURE_TOUR.md`
 - Data: `src/data/`
 

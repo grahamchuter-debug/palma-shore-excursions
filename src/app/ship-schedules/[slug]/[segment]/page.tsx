@@ -31,11 +31,19 @@ export function generateStaticParams() {
   const params: { slug: string; segment: string }[] = [];
   for (const slug of getAllSchedulePortSlugs()) {
     for (const year of SCHEDULE_YEARS) {
-      params.push({ slug, segment: String(year) });
+      // Only emit indexable year pages when verified entries exist for that year
+      if (getScheduleEntriesForYear(slug, year).length > 0) {
+        params.push({ slug, segment: String(year) });
+      }
     }
     for (const monthKey of getVerifiedMonthKeys(slug)) {
       params.push({ slug, segment: monthKeyToSlug(monthKey) });
     }
+  }
+  // Static export requires ≥1 path for dynamic routes. When the schedule file is
+  // empty, emit a non-public stub that 404s so we never index empty year pages.
+  if (params.length === 0) {
+    return [{ slug: "palma", segment: "__none__" }];
   }
   return params;
 }
@@ -46,6 +54,14 @@ export async function generateMetadata({
   params: Promise<{ slug: string; segment: string }>;
 }) {
   const { slug, segment } = await params;
+  if (segment === "__none__") {
+    return buildMetadata({
+      title: "Palma Schedule Integration Placeholder",
+      description:
+        "Placeholder route reserved for verified Palma cruise ship schedule month and year pages once call data is supplied.",
+      path: "/palma-cruise-ship-schedule",
+    });
+  }
   const port = getSchedulePortBySlug(slug);
   if (!port) return {};
 
@@ -79,6 +95,51 @@ export default async function ShipScheduleSegmentPage({
   const { slug, segment } = await params;
   const port = getSchedulePortBySlug(slug);
   if (!port) notFound();
+
+  // Static-export placeholder when no verified year/month data exists yet.
+  // Canonical points at the public schedule hub; do not invent ship calls.
+  if (segment === "__none__") {
+    const breadcrumbs = [
+      { name: "Home", path: "/" },
+      { name: "Palma Cruise Ship Schedule", path: "/palma-cruise-ship-schedule" },
+    ];
+    return (
+      <>
+        <JsonLd
+          data={[
+            breadcrumbSchema(breadcrumbs),
+            webPageSchema({
+              title: "Palma Cruise Ship Schedule",
+              description: port.intro,
+              path: "/palma-cruise-ship-schedule",
+            }),
+          ]}
+        />
+        <PageHero
+          title="Palma Cruise Ship Schedule"
+          subtitle="Verified arrivals will appear here once schedule data is supplied."
+          compact
+        />
+        <section className="section-padding">
+          <div className="container-wide max-w-3xl">
+            <Breadcrumbs items={breadcrumbs} />
+            <div className="card-feature mt-6">
+              <h2 className="font-display text-xl font-bold text-gray-900">Schedule data integration point</h2>
+              <p className="mt-3 text-gray-700 leading-relaxed">
+                This site is ready to render verified Palma cruise calls from{" "}
+                <code className="text-sm">src/data/imported-schedules/palma.json</code>. No ship arrivals
+                have been invented. When real data is added, year and month pages are generated
+                automatically.
+              </p>
+              <Link href="/palma-cruise-ship-schedule" className="btn-primary mt-6 inline-flex">
+                Open the Palma schedule hub
+              </Link>
+            </div>
+          </div>
+        </section>
+      </>
+    );
+  }
 
   const year = parseScheduleYear(segment);
   const monthKey = parseMonthSlug(segment);
@@ -154,12 +215,14 @@ export default async function ShipScheduleSegmentPage({
               <Link href={portHubPath(slug)} className="btn-primary text-sm">
                 {port.name} Schedule Hub
               </Link>
-              {SCHEDULE_YEARS.filter((y) => y !== year).map((y) => (
+              {SCHEDULE_YEARS.filter(
+                (y) => y !== year && getScheduleEntriesForYear(slug, y).length > 0,
+              ).map((y) => (
                 <Link key={y} href={portYearPath(slug, y)} className="btn-secondary text-sm">
                   {y} Schedule
                 </Link>
               ))}
-              <Link href="/cruise-port-guide" className="btn-secondary text-sm">
+              <Link href="/palma-cruise-port" className="btn-secondary text-sm">
                 Cruise Port Guide
               </Link>
             </div>
@@ -221,7 +284,7 @@ export default async function ShipScheduleSegmentPage({
             <Link href={portHubPath(slug)} className="btn-secondary text-sm">
               {port.name} Schedule Hub
             </Link>
-            <Link href="/cruise-port-guide" className="btn-secondary text-sm">
+            <Link href="/palma-cruise-port" className="btn-secondary text-sm">
               Cruise Port Guide
             </Link>
           </div>

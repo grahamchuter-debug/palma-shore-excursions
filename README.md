@@ -1,18 +1,18 @@
-# Malaga Shore Excursions
+# Palma Shore Excursions
 
-World 2.0 flagship destination site for [malagashoreexcursions.com](https://malagashoreexcursions.com) — the cruise passenger's guide to discovering Andalusia from Malaga.
+World 2.0 destination site for [palmashoreexcursions.com](https://palmashoreexcursions.com) — the cruise passenger's guide to Palma de Mallorca and Mallorca.
 
-**Positioning:** Gateway to Andalusia / Where Southern Spain Begins
+**Positioning:** Your Mediterranean Island Day
 
-## Destination identity prototype
+## Destination identity
 
-Málaga is the reference prototype for the future World 2.0 network identity system (`DestinationLogo` + `destinationIdentity` config). Other destinations are not implemented yet — change `logoConcept` between `"anchor-arch"` and `"harbour-m"` to compare marks.
+Uses the shared World 2.0 destination logo system (`DestinationLogo` + `destinationIdentity` config; Málaga was the original prototype). Change `logoConcept` between `"anchor-arch"` and `"harbour-m"` to compare marks.
 
 ## Stack
 
 - Next.js 16 (static export)
 - React 19 + Tailwind CSS 4
-- Cloudflare Pages (`malaga-shore-excursions`)
+- Cloudflare Pages (`palma-shore-excursions`)
 
 ## Commands
 
@@ -27,5 +27,5 @@ npm run pages:deploy
 
 ## Domain
 
-- Site: https://malagashoreexcursions.com
-- Email: hello@malagashoreexcursions.com
+- Site: https://palmashoreexcursions.com
+- Email: hello@palmashoreexcursions.com
