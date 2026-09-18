@@ -17,8 +17,8 @@ export const imageManifest = {
   },
   "cathedral": {
     "base": "cathedral",
-    "width": 3840,
-    "height": 3840,
+    "width": 1920,
+    "height": 1920,
     "fallbackWidth": 1920,
     "fallbackHeight": 1920,
     "widths": [
@@ -38,8 +38,8 @@ export const imageManifest = {
   },
   "caves": {
     "base": "caves",
-    "width": 870,
-    "height": 631,
+    "width": 800,
+    "height": 580,
     "fallbackWidth": 800,
     "fallbackHeight": 580,
     "widths": [
@@ -77,8 +77,8 @@ export const imageManifest = {
   },
   "compare": {
     "base": "compare",
-    "width": 3840,
-    "height": 3840,
+    "width": 1920,
+    "height": 1920,
     "fallbackWidth": 1920,
     "fallbackHeight": 1920,
     "widths": [
@@ -98,8 +98,8 @@ export const imageManifest = {
   },
   "cycling": {
     "base": "cycling",
-    "width": 1920,
-    "height": 1440,
+    "width": 800,
+    "height": 600,
     "fallbackWidth": 800,
     "fallbackHeight": 600,
     "widths": [
@@ -116,8 +116,8 @@ export const imageManifest = {
   },
   "family": {
     "base": "family",
-    "width": 2304,
-    "height": 1728,
+    "width": 800,
+    "height": 600,
     "fallbackWidth": 800,
     "fallbackHeight": 600,
     "widths": [
@@ -134,8 +134,8 @@ export const imageManifest = {
   },
   "food": {
     "base": "food",
-    "width": 1920,
-    "height": 1440,
+    "width": 800,
+    "height": 600,
     "fallbackWidth": 800,
     "fallbackHeight": 600,
     "widths": [
@@ -152,8 +152,8 @@ export const imageManifest = {
   },
   "hero-home": {
     "base": "hero-home",
-    "width": 3840,
-    "height": 2563,
+    "width": 1920,
+    "height": 1282,
     "fallbackWidth": 1920,
     "fallbackHeight": 1282,
     "widths": [
@@ -173,8 +173,8 @@ export const imageManifest = {
   },
   "historic": {
     "base": "historic",
-    "width": 2816,
-    "height": 2112,
+    "width": 800,
+    "height": 600,
     "fallbackWidth": 800,
     "fallbackHeight": 600,
     "widths": [
@@ -191,8 +191,8 @@ export const imageManifest = {
   },
   "market": {
     "base": "market",
-    "width": 1920,
-    "height": 1032,
+    "width": 800,
+    "height": 430,
     "fallbackWidth": 800,
     "fallbackHeight": 430,
     "widths": [
@@ -209,8 +209,8 @@ export const imageManifest = {
   },
   "og-default": {
     "base": "og-default",
-    "width": 3264,
-    "height": 2448,
+    "width": 1920,
+    "height": 1440,
     "fallbackWidth": 1920,
     "fallbackHeight": 1440,
     "widths": [
@@ -250,8 +250,8 @@ export const imageManifest = {
   },
   "port": {
     "base": "port",
-    "width": 2304,
-    "height": 1728,
+    "width": 1920,
+    "height": 1440,
     "fallbackWidth": 1920,
     "fallbackHeight": 1440,
     "widths": [
@@ -286,8 +286,8 @@ export const imageManifest = {
   },
   "soller": {
     "base": "soller",
-    "width": 3840,
-    "height": 1565,
+    "width": 1920,
+    "height": 783,
     "fallbackWidth": 1920,
     "fallbackHeight": 783,
     "widths": [
@@ -307,8 +307,8 @@ export const imageManifest = {
   },
   "train": {
     "base": "train",
-    "width": 1920,
-    "height": 1440,
+    "width": 800,
+    "height": 600,
     "fallbackWidth": 800,
     "fallbackHeight": 600,
     "widths": [
@@ -340,8 +340,8 @@ export const imageManifest = {
   },
   "valldemossa": {
     "base": "valldemossa",
-    "width": 1820,
-    "height": 1365,
+    "width": 800,
+    "height": 600,
     "fallbackWidth": 800,
     "fallbackHeight": 600,
     "widths": [
@@ -358,8 +358,8 @@ export const imageManifest = {
   },
   "walking": {
     "base": "walking",
-    "width": 3840,
-    "height": 3880,
+    "width": 800,
+    "height": 808,
     "fallbackWidth": 800,
     "fallbackHeight": 808,
     "widths": [

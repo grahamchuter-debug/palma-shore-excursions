@@ -1,5 +1,14 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Workers Static Assets — Pages project slot unavailable (account limit).
+  // Custom domains attach via Workers routes / CF dashboard.
   "name": "palma-shore-excursions",
   "compatibility_date": "2025-04-01",
-  "pages_build_output_dir": "out"
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "./out",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page"
+  }
 }

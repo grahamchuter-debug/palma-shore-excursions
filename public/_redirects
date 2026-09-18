@@ -1,7 +1,4 @@
-# Apex canonical — non-WWW HTTPS
-https://www.palmashoreexcursions.com/* https://palmashoreexcursions.com/:splat 301
-http://www.palmashoreexcursions.com/* https://palmashoreexcursions.com/:splat 301
-http://palmashoreexcursions.com/* https://palmashoreexcursions.com/:splat 301
+# Apex www→apex enforced via Cloudflare Redirect Rules (Workers Assets cannot use absolute hosts).
 
 # Friendly aliases → canonical routes
 /cruise-port-guide /palma-cruise-port/ 301

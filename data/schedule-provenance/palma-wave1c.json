@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-09-18T07:24:51.190Z",
+  "wave": "wave-1c",
+  "port": "palma",
+  "destSlug": "palma",
+  "displayName": "Palma de Mallorca",
+  "portIdentityNote": "Palma de Mallorca identity only",
+  "minPublishRows": 15,
+  "counts": {
+    "2026": 74,
+    "2027": 213,
+    "2028_discovery": 112,
+    "2028_published": 19,
+    "public_total": 304
+  },
+  "partial2026": true,
+  "filter2028": {
+    "decision": "PUBLISH",
+    "reason": "validated 19 >= MIN_PUBLISH_ROWS 15 — publish validated only; held 93 restricted/unvalidated",
+    "validatedCount": 19,
+    "tier2AzamaraVenice": 0
+  },
+  "timeCompleteness": {
+    "2026": {
+      "total": 74,
+      "arrival": 67,
+      "departure": 61,
+      "both": 61,
+      "neither": 7,
+      "pctBoth": 82.4
+    },
+    "2027": {
+      "total": 213,
+      "arrival": 163,
+      "departure": 156,
+      "both": 150,
+      "neither": 44,
+      "pctBoth": 70.4
+    },
+    "2028": {
+      "total": 19,
+      "arrival": 16,
+      "departure": 16,
+      "both": 16,
+      "neither": 3,
+      "pctBoth": 84.2
+    }
+  },
+  "berthPolicy": "unknown — no generic terminals published",
+  "contaminationPurged": [],
+  "wireSchedulesTs": null,
+  "placeholderPurged": true
+}
